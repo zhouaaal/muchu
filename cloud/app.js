@@ -53,8 +53,8 @@ app.post('/',function(req, res){
 		//Save visitor
 		var visitor = new Visitor();
 		visitor.set('name', name);
-		//visitor.set('phone', phone);
-		//visitor.set('weixin', weixin);
+		visitor.set('phone', phone);
+		visitor.set('weixin', weixin);
 		visitor.save(null, {
 			success: function(gameScore) {
 				res.redirect('/?name=' + name);
