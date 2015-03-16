@@ -47,14 +47,14 @@ app.get('/', function(req, res){
 
 app.post('/',function(req, res){
 	var name = req.body.user_name;
-	var phone=req.body.user_phone;
-	var weixin=req.body.user_weixin;
+	//var phone=req.body.user_phone;
+	//var weixin=req.body.user_weixin;
 	if(name && name.trim() !=''){
 		//Save visitor
 		var visitor = new Visitor();
 		visitor.set('name', name);
-		visitor.set('phone', phone);
-		visitor.set('weixin', weixin);
+		//visitor.set('phone', phone);
+		//visitor.set('weixin', weixin);
 		visitor.save(null, {
 			success: function(gameScore) {
 				res.redirect('/?name=' + name);
