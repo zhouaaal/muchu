@@ -1,43 +1,122 @@
-
-
+<!DOCTYPE html>
 <html>
-  <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-	<link href="stylesheets/bootstrap.min.css" rel="stylesheet" type="text/css" />
-    <title>AVOS Cloud网站托管Demo</title>
-  </head>
-  <body>
-	<div class='container'>
-	  <h3>AVOS Cloud网站托管Demo</h3>
-	  <br/>
-	  <p>hello,<%= name %></p>
-	  <br/>
-	  <div>
-		<form action="/" method="post">
-		  Say hello to: <input type='text' name='name' id='name'/>
-		  <input type='submit' value='Say'/>
-		</form>
-	  </div>
-	  <br/>
-	  <br/>
-	  <h4>Recent visitors</h4>
-	  <br/>
-	  <br/>
-	  <table class='table table-bordered'>
-		<% if (visitors){ %>
-		<%  visitors.forEach(function (visitor){ %>
-		<tr>
-		  <td> <%= visitor.get('name') %> </td>
-		</tr>
-		<% })
-		   } %>
-	  </table>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="keywords" content="暮秋微商家" /> 
+<meta name="description" content="暮秋微商" />
+<title>在日华人信息</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+<link href="stylesheets/iscroll.css" rel="stylesheet" type="text/css" />
+</head>
+<body class="allbg">
+
+<div class="banner">
+	<div id="wrapper">
+		<div id="scroller">
+			<ul id="thelist">
+				<li><img src="http://www.luru123.com/store/images/dongjing.jpg/dongjing.jpg" /></li>
+			</ul>
+		</div>
 	</div>
-	<div class='container'>
-	  <footer class="footer">
-		<p>Powered by <a href='https://cn.avoscloud.com'>AVOSCloud.com</a></p>
-		<p>Source code: <a href='https://github.com/killme2008/cloudcode-test'>https://github.com/killme2008/cloudcode-test</a></p>
-	  </footer>
+</div>
+<div class="registpage">
+	<div class="infobox"><p>&nbsp;&nbsp;&nbsp;&nbsp;赶快加入我们，无需每天坐班，只需登陆我们的P2P导游派遣网站即可找到你心仪的导游工作。轻松月入百万日元。半天，一天，若干天等，各种导游路线应有尽有！有导游经验优先。没有导游经验愿意挑战的人士也没有关系！
+<br>&nbsp;&nbsp;&nbsp;&nbsp;喜欢旅游，良好的沟通能力；外表形象佳，责任心强，细致认真；踏实，工作有条理，办事沉稳、细心、领悟能力强，性格开朗，头脑灵活，青春，阳光。身体健康，有上进心。性别国籍不限。18周岁以上50周岁以下。精通中文和会日语。有正规日本在留资格（留学生可）。导游路线遍布日本全国各地，你可以选择自己合适的区域。
+<br>&nbsp;&nbsp;&nbsp;&nbsp;( 支持以下开通网上银行的储蓄卡及信用卡)
+中国工商银行、建设银行、中国银行、交通银行、中国农业银行、招商银行、 中国光大银行、兴业银行、中国民生银行、中信银行、上海浦东发展银行、 广东发展银行、南京银行、宁波银行、平安银行、北京银行、中国邮政储蓄银行。第三方支付 ：支付宝 。</p></div>
+	
+    <div class="join-top"><div class="jointitle">请如实填写报名信息，以便后续联系！</div></div>
+    <div class="join-mid" action="/" method="post">
+    	<div class="join-input"><input name="user_name" type="text" id='user_name' class="inputbox" placeholder="+ 姓名"></div>
+    	<div class="join-input inputbg1"><input name="user_phone" type="text" id='user_phone' class="inputbox" placeholder="+ 手机号"></div>
+    	<div class="join-input inputbg3"><input name="user_weixin" type="text" id='user_weixin' class="inputbox" placeholder="+ 微信号"></div>
+    	<div class="join-radio inputbg4"><form class="groupradio">驾驶执照：<input name="user_have" type="radio" value="1" class="radio-btn" />有&nbsp;&nbsp;<input name="user_have" type="radio" value="0" class="radio-btn" />无</form></div>
+        <div><input type="submit" name="Button1" value="提 交" id="Button1" class="join-submit"></div>
+    </div>
+</div>
+
+<div class="copyright">CopyRight 2015  创思维力，All rights reserved.</div>
+<div class="menwrap">
+	<div class="expan2"><a href="Index.html"></a></div>
+    <div class="btn3 clearfix">
+        <div class="menu">
+            <div class="bt-name">微官网</div>
+            <div class="sanjiao"></div>
+            <ul class="new-sub margin10">
+                <li class="pipe2"><a href="Index.html">商家导航</a></li>
+                <li class="pipe1"><a href="#" >微场景</a></li>
+                <li class="pipe1"><a href="#" >刮刮卡</a></li>
+                <li><img src="http://www.luru123.com/store/images/dongjing.jpg/arrow-down.png" width="16" height="16" style="position:absolute; bottom:-16px"></li>
+            </ul>
+        </div>
+        <div class="menu">
+            <div class="bt-name">便民服务</div>
+            <div class="sanjiao"></div>
+            <ul class="new-sub margin10">
+                <li class="pipe2"><a href="#">招聘</a></li>
+                <li class="pipe1"><a href="#" >旅游</a></li>
+                <li class="pipe1"><a href="#" >手机</a></li>
+                <li class="pipe1"><a href="#" >按摩</a></li>
+                <li class="pipe1"><a href="#" >电话卡</a></li>
+                <li><img src="http://www.luru123.com/store/images/dongjing.jpg/arrow-down.png" width="16" height="16" style="position:absolute; bottom:-16px"></li>
+            </ul>
+        </div>
+        <div class="menu" >
+        	<div class="bt-name">暮秋盒子</div>
+        	<div class="sanjiao"></div>
+            <ul class="new-sub margin10">
+                <li class="pipe2"><a href="#">一键购买</a></li>
+                <li class="pipe1"><a href="#" >我要看电视</a></li>
+                <li class="pipe1"><a href="#" >说明</a></li>
+                <li class="pipe1"><a href="#" >价目表</a></li>
+                <li class="pipe1"><a href="#" >投诉与建议</a></li>
+                <li><img src="http://www.luru123.com/store/images/dongjing.jpg/arrow-down.png" width="16" height="16" style="position:absolute; bottom:-16px; text-align:center"></li>
+            </ul>
+            </ul>
+        </div>
 	</div>
-  </body>
+</div>
+
+<script type="text/javascript" src="http://www.luru123.com/store/store/jquery.min.js"></script>
+<script>
+$(".menu").click(function() {
+    if ($(this).hasClass("cura")) {
+        $(this).children(".new-sub").hide(); //当前菜单下的二级菜单隐藏
+        $(".menu").removeClass("cura"); //同一级的菜单项
+    } else {
+        $(".menu").removeClass("cura"); //移除所有的样式
+        $(this).addClass("cura"); //给当前菜单添加特定样式
+        $(".new-sub").hide(); //隐藏所有的二级菜单
+        $(this).children(".new-sub").show(); //展示当前的二级菜单
+    }
+});
+</script>
+<script type="text/javascript">
+var count = document.getElementById("thelist").getElementsByTagName("img").length;	
+
+var count2 = document.getElementsByClassName("menuimg").length;
+
+for(i=0;i<count;i++){
+ document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+}
+
+document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+
+setInterval(function(){
+	myScroll.scrollToPage('next', 0,400,count);
+},3500 );
+
+window.onresize = function(){ 
+	for(i=0;i<count;i++){
+		document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
+	}
+ document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
+}
+</script>
+
+</body>
 </html>
