@@ -46,7 +46,7 @@ app.get('/', function(req, res){
 });
 
 app.post('/',function(req, res){
-	var name = req.body.user_name;
+	var name = req.body.name;
 	//var phone=req.body.user_phone;
 	//var weixin=req.body.user_weixin;
 	if(name && name.trim() !=''){
