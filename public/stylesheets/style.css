@@ -214,9 +214,9 @@ outline: none;}
  border-left-radius:5px; border-radius:5px;
  -moz-border-left-radius:5px; -moz-border-right-radius:5px;
  -webkit-border-left-radius:5px; -webkit-border-right-radius:5px;}
- .inputbg1{ background:url(../images/register_03.png) left 8px center no-repeat #f3f3f3;}
- .inputbg2{ background:url(../images/register_04.png) left 8px center no-repeat #f3f3f3;}
- .inputbg3{ background:url(../images/register_05.png) left 8px center no-repeat #f3f3f3;}
+ .inputbg1{ background:url(http://www.luru123.com/store/images/register_03.png) left 8px center no-repeat #f3f3f3;}
+ .inputbg2{ background:url(http://www.luru123.com/store/images/register_04.png) left 8px center no-repeat #f3f3f3;}
+ .inputbg3{ background:url(http://www.luru123.com/store/images/register_05.png) left 8px center no-repeat #f3f3f3;}
  .inputbox{ padding:10px 0 10px 40px ; float:left;position: relative; z-index:999; line-height:25px;width:90%; border:0px ; background:none; color:#b9b9b9; }
  .join-btn{ float:left;position: relative; z-index:999;margin-left:2.5%;margin-top:2.5%; width:94%;  border:1px solid #ec5248; background: #ec5248; text-align:center; cursor:pointer;
  border-radius:5px; border-radius:5px;
