@@ -12,7 +12,7 @@ img{max-width:100%;}
 .clearfix:after{visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;zoom:1;}
 .l{float:left;}.r{float:right;}
 /*reset样式重置*/
-.allbg{background:url(../images/backgrnd.jpg) left repeat-y #ebebeb;-moz-background-size:100% 220px;
+.allbg{background:url(http://www.luru123.com/store/images/backgrnd.jpg) left repeat-y #ebebeb;-moz-background-size:100% 220px;
     -webkit-background-size:100% 220px;
     -o-background-size:100% 220px;
     background-size:100% 220px;}
