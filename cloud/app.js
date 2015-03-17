@@ -57,6 +57,8 @@ app.post('/',function(req, res){
 		visitor.set('weixin', weixin);
 		visitor.save(null, {
 			success: function(gameScore) {
+				showModelessDialog('已成功提交,'在日华人信息','dialogWidth:400px;dialogHeight:300px;
+dialogLeft:200px;dialogTop:150px;center:yes;help:yes;resizable:yes;status:yes') 
 				res.redirect('/?name=' + name);
 			},
 			error: function(gameScore, error) {
