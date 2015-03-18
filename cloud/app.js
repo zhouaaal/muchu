@@ -37,7 +37,7 @@ function renderIndex(res, name){
 	});
 }
 
-function renderQuery(res,name){
+/*function renderQuery(res,name){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
 	query.limit(10);
@@ -56,7 +56,7 @@ function renderQuery(res,name){
 app.get('/query',function(req,res){
 	var name=req.query.name;
 	renderQuery(res,name);
-});
+});*/
 
 app.get('/', function(req, res){
 	var name = req.query.name;
