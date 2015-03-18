@@ -37,14 +37,14 @@ function renderIndex(res, name){
 	});
 }
 
-/*function renderQuery(res,name){
+function renderQuery(res,name){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
 	query.limit(10);
 	query.descending('createdAt');
 	query.find({
 		success: function(results){
-			res.render('index',{ name: name,phone:phone, weixin:weixin,visitors: results});
+			res.render('query',{ name: name,phone:phone, weixin:weixin,visitors: results});
 		},
 		error: function(error){
 			console.log(error);
@@ -56,7 +56,7 @@ function renderIndex(res, name){
 app.get('/query',function(req,res){
 	var name=req.query.name;
 	renderQuery(res,name);
-});*/
+});
 
 app.get('/', function(req, res){
 	var name = req.query.name;
