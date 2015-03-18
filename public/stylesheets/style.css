@@ -107,9 +107,9 @@ outline: none;}
  -moz-border-top-left-radius:3px; -moz-border-top-right-radius:3px;
  -webkit-border-top-left-radius:3px; -webkit-border-top-right-radius:3px;}
 .toptitleicon{float:left;width:100%;position: relative; z-index: 1; background:url(../images/detail_03.png) center bottom no-repeat; height:76px ; text-align:center}
-.shopclass{float:left;width:40%;position: relative; z-index: 1; line-height:58px; font-size:18px; text-align:center ;  }
-.shopclass3{float:left;width:40%;position: relative; z-index: 1; line-height:58px; font-size:18px; text-align:center ; color:#fff}
-.shopclass2{float:left;width:20%;position: relative; z-index: 1; line-height:58px; font-size:18px; text-align:center ;}
+.shopclass{float:left;width:40%;position: relative; z-index: 1; line-height:58px; font-size:18px; text-align:center ;color: #FFF;  }
+.shopclass3{float:left;width:40%;position: relative; z-index: 1; line-height:58px; font-size:18px; text-align:center ;color:#fff}
+.shopclass2{float:left;width:20%;position: relative; z-index: 1; line-height:58px; font-size:18px; text-align:center ;color: #FFF;}
 .shop-page{float:left; margin-left:2.5%; width:95%;position: relative; z-index: 1; background:#ec5248; border-top:3px solid #d71f13; height:58px ;
  border-bottom-left-radius:3px; border-bottom-right-radius:3px;
  -moz-border-bottom-left-radius:3px; -moz-border-bottom-right-radius:3px;
