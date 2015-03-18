@@ -42,17 +42,17 @@ document.addEventListener('DOMContentLoaded', loaded, false);
     	<div class="shopclass2">手机</div>
         <div class="shopclass3">微信</div>
     </div>
-    <table class='table table-bordered'>
+    <ul class="shoplist">
 		<% if (visitors){ %>
 		<%  visitors.forEach(function (visitor){ %>
-		<tr>
-		  <td> <%= visitor.get('name') %> </td>
-		  <td> <%= visitor.get('phone') %> </td>
-		  <td> <%= visitor.get('weixin') %> </td>
-		</tr>
+		<li>
+		  <p> <%= visitor.get('name') %> </p>
+		  <p> <%= visitor.get('phone') %> </p>
+		  <p> <%= visitor.get('weixin') %> </p>
+		</li>
 		<% })
 		   } %>
-	  </table>
+	  </ul>
     <div class="shop-page">
     	<span class="pages"><a href="#">首页</a></span>
         <span class="pages"><a href="#">上一页</a></span>
