@@ -37,7 +37,7 @@ function renderIndex(res, name){
 	});
 }
 
-function renderQuery(res,name){
+function renderQuery(res,name,phone,weixin){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
 	query.limit(10);
@@ -55,7 +55,9 @@ function renderQuery(res,name){
 
 app.get('/query',function(req,res){
 	var name=req.query.name;
-	renderQuery(res,name);
+	var phone=req.query.phone;
+	var weixin=req.query.weixin;
+	renderQuery(res,name,phone,weixin);
 });
 
 app.get('/', function(req, res){
