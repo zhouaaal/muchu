@@ -79,7 +79,7 @@ app.post('/',function(req, res){
 		visitor.set('weixin', weixin);
 		visitor.save(null, {
 			success: function(gameScore) {
-				res.redirect('/success?name=' + name+'&phone='+phone+'&weixin='+weixin);
+				res.render('/success',{ name: name,phone:phone, weixin:weixin});
 			},
 			error: function(gameScore, error) {
 				res.render('500', 500);
