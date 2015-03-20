@@ -53,6 +53,22 @@ function renderQuery(res,name,phone,weixin){
 	});
 }
 
+function renderSuccess(res,name,phone,weixin){
+	var query = new AV.Query(Visitor);
+	query.skip(0);
+	query.limit(10);
+	query.descending('createdAt');
+	query.find({
+		success: function(results){
+			res.render('success',{ name: name,phone:phone, weixin:weixin,visitors: results});
+		},
+		error: function(error){
+			console.log(error);
+			res.render('500',500)
+		}
+	});
+}
+
 app.get('/query',function(req,res){
 	var name=req.query.name;
 	var phone=req.query.phone;
@@ -79,7 +95,7 @@ app.post('/',function(req, res){
 		visitor.set('weixin', weixin);
 		visitor.save(null, {
 			success: function(gameScore) {
-				res.render('/success',{ name: name,phone:phone, weixin:weixin});
+				renderSuccess(res,name,phone,weixin);
 			},
 			error: function(gameScore, error) {
 				res.render('500', 500);
