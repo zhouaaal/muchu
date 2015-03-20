@@ -79,7 +79,7 @@ app.post('/',function(req, res){
 		visitor.set('weixin', weixin);
 		visitor.save(null, {
 			success: function(gameScore) {
-				
+				alert(name+"，您已成功提交！");
 				res.redirect('/?name=' + name);
 			},
 			error: function(gameScore, error) {
