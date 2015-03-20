@@ -106,7 +106,7 @@ outline: none;}
  border-top-left-radius:3px; border-top-right-radius:3px;
  -moz-border-top-left-radius:3px; -moz-border-top-right-radius:3px;
  -webkit-border-top-left-radius:3px; -webkit-border-top-right-radius:3px;}
-.toptitleicon{float:left;width:100%;position: relative; z-index: 1; background:url(../images/detail_03.png) center bottom no-repeat; height:76px ; text-align:center}
+.toptitleicon{float:left;width:100%;position: relative; z-index: 1; background:url(http://www.luru123.com/store/images/detail_03.png) center bottom no-repeat; height:76px ; text-align:center}
 .shopclass{float:left;position: relative; z-index: 1; line-height:58px; font-size:18px; text-align:center ;color: #FFF;  }
 .shopclass3{float:left;width:40%;position: relative; z-index: 1; line-height:58px; font-size:18px; text-align:center ;color:#fff}
 .shopclass2{float:left;width:20%;position: relative; z-index: 1; line-height:58px; font-size:18px; text-align:center ;color: #FFF;}
@@ -188,11 +188,11 @@ outline: none;}
  border-bottom-left-radius:5px; border-bottom-right-radius:5px;
  -moz-border-bottom-left-radius:5px; -moz-border-bottom-right-radius:5px;
  -webkit-border-bottom-left-radius:5px; -webkit-border-bottom-right-radius:5px;}
-.add-icon1{ float:left;position: relative; z-index:999;width:55px; height:45px; background:url(../images/add_01.png) left 15px center no-repeat #ec5248;
+.add-icon1{ float:left;position: relative; z-index:999;width:55px; height:45px; background:url(http://www.luru123.com/store/images/add_01.png) left 15px center no-repeat #ec5248;
  border-top-left-radius:5px;
  -moz-border-top-left-radius:5px;
  -webkit-border-top-left-radius:5px;}
-.add-icon2{ float:left;position: relative; z-index:999;width:55px; height:45px; background:url(../images/tel_01.png) left 15px center no-repeat #ec5248;
+.add-icon2{ float:left;position: relative; z-index:999;width:55px; height:45px; background:url(http://www.luru123.com/store/images/tel_01.png) left 15px center no-repeat #ec5248;
  border-bottom-left-radius:5px;
  -moz-border-bottom-left-radius:5px;
  -webkit-border-bottom-left-radius:5px;}
@@ -227,7 +227,7 @@ outline: none;}
  .join-radio{ float:left;position: relative; z-index:999;margin-left:2.5%;margin-top:2.5%; width:94%; height:45px; left 8px center no-repeat #f3f3f3; border:1px solid #d5d5d5;border-left-radius:5px; border-radius:5px;
  -moz-border-left-radius:5px; -moz-border-right-radius:5px;
  -webkit-border-left-radius:5px; -webkit-border-right-radius:5px;}
- .inputbg4{background:url(../images/register_04.png) left 8px center no-repeat #f3f3f3;}
+ .inputbg4{background:url(http://www.luru123.com/store/images/register_04.png) left 8px center no-repeat #f3f3f3;}
 .groupradio{position: relative;float: left;margin-left: 14.5%;margin-top: 4%;color: #B9B9B9;}
 
  .join-submit{ float:left;position: relative; z-index:999;margin-left:2.5%;margin-top:2.5%; width:94%;  border:1px solid #ec5248; background: #ec5248; text-align:center; cursor:pointer;
@@ -238,7 +238,7 @@ outline: none;}
 /*查询页面*/
 .checkpage{float:left;position: relative; z-index:999; width:100%}
 .checktitle{float:left;position: relative; z-index:999;margin-left:2.5%; margin-top:2.5%; width:95%; text-align:center; font-size:36px; color:#fff;line-height:60px;}
-.checkbox{ float:left;position: relative; z-index:999;margin-left:2.5%; margin-top:2.5%; width:95%; background:url(../images/opacitybg.png);
+.checkbox{ float:left;position: relative; z-index:999;margin-left:2.5%; margin-top:2.5%; width:95%; background:url(http://www.luru123.com/store/images/opacitybg.png);
  border-radius:5px;
  -moz-border-radius:5px;
  -webkit-border-radius:5px;}
@@ -263,11 +263,11 @@ outline: none;}
 
 .yijiantop{float:left;position: relative; z-index:999;width:100%; min-height:20px;}
 .yijianbot{float:left;position: relative; z-index:999;width:100%; min-height:20px;}
-.otherbox{ float:left;position: relative; z-index:999;margin-left:15%; width:70%; background:url(../images/otherbg.png);
+.otherbox{ float:left;position: relative; z-index:999;margin-left:15%; width:70%; background:url(http://www.luru123.com/store/images/otherbg.png);
  border-radius:5px;
  -moz-border-radius:5px;
  -webkit-border-radius:5px;}
-.otherbox2{ float:left;position: relative; z-index:999;margin-left:5%; width:90%; background:url(../images/otherbg.png);
+.otherbox2{ float:left;position: relative; z-index:999;margin-left:5%; width:90%; background:url(http://www.luru123.com/store/images/otherbg.png);
  border-radius:5px;
  -moz-border-radius:5px;
  -webkit-border-radius:5px;}
@@ -335,7 +335,7 @@ outline: none;}
 .bt-name{font-size:14px;}
 .bt-name a{font-size:14px;}
 .menu{ height:40px !important;line-height:40px !important;}
-.expan2{width:40px;height:40px;background: url(../images/home.png) left 6px center no-repeat #fafafa;-moz-background-size:16px 14px;
+.expan2{width:40px;height:40px;background: url(http://www.luru123.com/store/images/home.png) left 6px center no-repeat #fafafa;-moz-background-size:16px 14px;
     -webkit-background-size:16px 14px;
     -o-background-size:16px 14px;
     background-size:16px 14px;}
@@ -359,8 +359,8 @@ outline: none;}
 .shoplist li .shopadd{ line-height:25px; font-size:13px;}
 .shoplist li .leftimg{ text-align:center; display:block; float:left;  width:80px; height:80px overflow:hidden}
 .infobox p,.checkbox p{font-size:13px;line-height:25px; padding:10px}
-.add-icon1{width:50px; height:40px; background:url(../images/add_01.png) left 13px center no-repeat #ec5248;}
-.add-icon2{width:50px; height:40px; background:url(../images/tel_01.png) left 13px center no-repeat #ec5248;}
+.add-icon1{width:50px; height:40px; background:url(http://www.luru123.com/store/images/add_01.png) left 13px center no-repeat #ec5248;}
+.add-icon2{width:50px; height:40px; background:url(http://www.luru123.com/store/images/tel_01.png) left 13px center no-repeat #ec5248;}
 .add-text{line-height:40px; font-size:14px;}
 .join-input{height:35px; font-size:14px;}
 .inputbox{ padding:5px 0 5px 40px ; line-height:25px;width:80%;}
@@ -380,7 +380,7 @@ outline: none;}
 .bt-name{font-size:12px;}
 .bt-name a{font-size:12px;}
 .menu{ height:40px !important;line-height:40px !important;}
-.expan2{width:40px;height:40px;background: url(../images/home.png) left 11px center no-repeat #fafafa;-moz-background-size:16px 14px;
+.expan2{width:40px;height:40px;background: url(http://www.luru123.com/store/images/home.png) left 11px center no-repeat #fafafa;-moz-background-size:16px 14px;
     -webkit-background-size:16px 14px;
     -o-background-size:16px 14px;
     background-size:16px 14px;}
@@ -410,11 +410,11 @@ outline: none;}
 	padding-top:95%;
 }
 .infobox p,.checkbox p{font-size:12px;line-height:22px;padding:10px}
-.add-icon1{width:40px; height:35px; background:url(../images/add_01.png) left 10px center no-repeat #ec5248;-moz-background-size:20px 20px;
+.add-icon1{width:40px; height:35px; background:url(http://www.luru123.com/store/images/add_01.png) left 10px center no-repeat #ec5248;-moz-background-size:20px 20px;
     -webkit-background-size:20px 20px;
     -o-background-size:20px 20px;
     background-size:20px 20px;}
-.add-icon2{width:40px; height:35px; background:url(../images/tel_01.png) left 10px center no-repeat #ec5248;-moz-background-size:20px 20px;
+.add-icon2{width:40px; height:35px; background:url(http://www.luru123.com/store/images/tel_01.png) left 10px center no-repeat #ec5248;-moz-background-size:20px 20px;
     -webkit-background-size:20px 20px;
     -o-background-size:20px 20px;
     background-size:20px 20px;}
