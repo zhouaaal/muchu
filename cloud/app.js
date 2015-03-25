@@ -92,9 +92,9 @@ app.post('/',function(req, res){
 	var phone=req.body.phone;
 	var weixin=req.body.weixin;
 	var studyStatus=req.body.study;
-	var license=
+	/*var license=
 	var haveCar=
-	var fulltime=
+	var fulltime=*/
 	if(name && name.trim() !=''){
 		//Save visitor
 		var visitor = new Visitor();
