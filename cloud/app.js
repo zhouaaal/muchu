@@ -101,8 +101,10 @@ app.post('/',function(req, res){
 		visitor.set('name', name);
 		visitor.set('phone', phone);
 		visitor.set('weixin', weixin);
-		visitor.set('weixin', weixin);
-		visitor.set('weixin', weixin);
+		visitor.set('studyStatus', studyStatus);
+		visitor.set('license', license);
+		visitor.set('haveCar', haveCar);
+		visitor.set('fulltime', fulltime);
 		visitor.save(null, {
 			success: function(gameScore) {
 				renderSuccess(res,name,phone,weixin);
