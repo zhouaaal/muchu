@@ -214,18 +214,20 @@ outline: none;}
  
  .join-mid p{float:left;position: relative; z-index:999;margin-left:2.5%; width:95%; padding-bottom:2.5%; font-size: 15px;
 padding-bottom: 1.5%;
-margin-top: 2.5%;font: 14px "Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",宋体,Tahoma,Arial;}
+margin-top: 4.5%;font: 14px "Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",宋体,Tahoma,Arial;}
+
+.radiotxt{margin:-28px -27px -7px 20px;}
 
 .radio1{float:left;position: relative; z-index:999;margin-left:2.5%; width:94%; padding-bottom:1.5%; background: #f3f3f3;
  border-bottom-left-radius:5px; border-bottom-right-radius:5px;
  -moz-border-bottom-left-radius:5px; -moz-border-bottom-right-radius:5px;
  -webkit-border-bottom-left-radius:5px; -webkit-border-bottom-right-radius:5px;margin-top:-0.5%;border: 1px solid #D5D5D5;
-border-radius: 5px;padding-top: 0.5%;}
+border-radius: 5px;padding-top: 0.5%;top: 2.5%;}
 
 .radius{border-top-left-radius:0;border-top-right-radius:0;}
 .radius2{border-bottom-left-radius:0;border-bottom-right-radius:0;}
 
-.radiobox{padding:10px;height:20px;}
+.radiobox{padding:10px;height:22px;}
 .radiotext{margin-left: 11px;}
 .rich_media_title {
     padding-bottom: 10px;
