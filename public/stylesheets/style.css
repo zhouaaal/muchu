@@ -228,7 +228,7 @@ border-radius: 5px;padding-top: 0.5%;top: 2.5%;}
 .radius2{border-bottom-left-radius:0;border-bottom-right-radius:0;}
 
 .radiobox{padding:10px;height:26px;}
-.radiotext{margin-left: 11px;}
+.radiotext{margin-left: 11px;height: 26px;}
 .rich_media_title {
     padding-bottom: 10px;
     margin-bottom: 14px;
