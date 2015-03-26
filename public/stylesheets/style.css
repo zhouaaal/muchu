@@ -214,9 +214,9 @@ outline: none;}
  
  .join-mid p{float:left;position: relative; z-index:999;margin-left:2.5%; width:95%; padding-bottom:2.5%; font-size: 15px;
 padding-bottom: 1.5%;
-margin-top: 4.5%;font: 14px "Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",宋体,Tahoma,Arial;}
+margin-top: 4.5%;font: 14px "Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",宋体,Tahoma,Arial;margin-bottom: 2%;}
 
-.radiotxt{margin:-28px -27px -7px 20px;}
+.radiotxt{margin:-28px -27px -7px 30px;}
 
 .radio1{float:left;position: relative; z-index:999;margin-left:2.5%; width:94%; padding-bottom:1.5%; background: #f3f3f3;
  border-bottom-left-radius:5px; border-bottom-right-radius:5px;
