@@ -206,7 +206,7 @@ outline: none;}
  border-top-left-radius:5px; border-top-right-radius:5px;
  -moz-border-top-left-radius:5px; -moz-border-top-right-radius:5px;
  -webkit-border-top-left-radius:5px; -webkit-border-top-right-radius:5px;}
- .jointitle{ padding:10px 0 10px 70px ; float:left;position: relative; z-index:999; line-height:25px;width:60%; color:#fff; font-weight:100; font-size:15px}
+ .jointitle{ padding:10px 0 10px 70px ; float:left;position: relative; z-index:999; line-height:25px;width:60%; color:#fff; font-weight:100; font-size:18px;line-height: 30px;}
  .join-mid{ float:left;position: relative; z-index:999;margin-left:2.5%; width:95%; padding-bottom:2.5%; background: #f3f3f3;
  border-bottom-left-radius:5px; border-bottom-right-radius:5px;
  -moz-border-bottom-left-radius:5px; -moz-border-bottom-right-radius:5px;
@@ -214,7 +214,7 @@ outline: none;}
  
  .join-mid p{float:left;position: relative; z-index:999;margin-left:2.5%; width:95%; padding-bottom:2.5%; font-size: 15px;
 padding-bottom: 1.5%;
-margin-top: 1.5%;font: 14px "Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",宋体,Tahoma,Arial;}
+margin-top: 2.5%;font: 14px "Hiragino Sans GB","Microsoft Yahei","微软雅黑","宋体",宋体,Tahoma,Arial;}
 
 .radio1{float:left;position: relative; z-index:999;margin-left:2.5%; width:94%; padding-bottom:1.5%; background: #f3f3f3;
  border-bottom-left-radius:5px; border-bottom-right-radius:5px;
@@ -223,8 +223,9 @@ margin-top: 1.5%;font: 14px "Hiragino Sans GB","Microsoft Yahei","微软雅黑",
 border-radius: 5px;padding-top: 0.5%;}
 
 .radius{border-top-left-radius:0;border-top-right-radius:0;}
+.radius2{border-bottom-left-radius:0;border-bottom-right-radius:0;}
 
-.radiobox{padding:10px;}
+.radiobox{padding:10px;height:20px;}
 .radiotext{margin-left: 11px;}
 .rich_media_title {
     padding-bottom: 10px;
@@ -232,7 +233,7 @@ border-radius: 5px;padding-top: 0.5%;}
     border-bottom: 1px solid #E7E7EB;
 }
 
- .join-input{ float:left;position: relative; z-index:999;margin-left:2.5%;margin-top:2.5%; width:94%; height:45px; background:url(http://www.luru123.com/store/images/register_02.png) left 8px center no-repeat #f3f3f3; border:1px solid #d5d5d5;
+ .join-input{ float:left;position: relative; z-index:999;margin-left:2.5%;margin-top:3.5%; width:94%; height:45px; background:url(http://www.luru123.com/store/images/register_02.png) left 8px center no-repeat #f3f3f3; border:1px solid #d5d5d5;
  border-left-radius:5px; border-radius:5px;
  -moz-border-left-radius:5px; -moz-border-right-radius:5px;
  -webkit-border-left-radius:5px; -webkit-border-right-radius:5px;}
