@@ -92,14 +92,16 @@ app.post('/',function(req, res){
 	var phone=req.body.phone;
 	var weixin=req.body.weixin;
 	var studyStatus=req.body.study;
-	/*var license=
-	var haveCar=
-	var fulltime=*/
+	var license=req.body.license;
+	var haveCar=req.body.haveCar;
+	var fulltime=req.body.fulltime;
 	if(name && name.trim() !=''){
 		//Save visitor
 		var visitor = new Visitor();
 		visitor.set('name', name);
 		visitor.set('phone', phone);
+		visitor.set('weixin', weixin);
+		visitor.set('weixin', weixin);
 		visitor.set('weixin', weixin);
 		visitor.save(null, {
 			success: function(gameScore) {
