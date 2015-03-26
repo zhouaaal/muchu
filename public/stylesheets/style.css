@@ -235,11 +235,11 @@ border-radius: 5px;padding-top: 0.5%;top: 2.5%;}
     border-bottom: 1px solid #E7E7EB;
 }
 
- .join-input{ float:left;position: relative; z-index:999;margin-left:2.5%;margin-top:3.5%; width:94%; height:45px; -moz-background:url(http://www.luru123.com/store/images/register_02.png) left 8px center no-repeat #f3f3f3; border:1px solid #d5d5d5;
+ .join-input{ float:left;position: relative; z-index:999;margin-left:2.5%;margin-top:3.5%; width:94%; height:45px;-moz-background:url(http://www.luru123.com/store/images/register_02.png) left 8px center no-repeat #f3f3f3; border:1px solid #d5d5d5;
  border-left-radius:5px; border-radius:5px;
  -moz-border-left-radius:5px; -moz-border-right-radius:5px;
- -webkit-border-left-radius:5px; -webkit-border-right-radius:5px;}-webkit-background:url(http://www.luru123.com/store/images/register_02.png) left 8px center no-repeat #f3f3f3;
- .inputbg1{ background:url(http://www.luru123.com/store/images/register_03.png) left 8px center no-repeat #f3f3f3; -moz-background:url(http://www.luru123.com/store/images/register_03.png) left 8px center no-repeat #f3f3f3; -webkit-background:url(http://www.luru123.com/store/images/register_03.png) left 8px center no-repeat #f3f3f3;}
+ -webkit-border-left-radius:5px; -webkit-border-right-radius:5px;-webkit-background:url(http://www.luru123.com/store/images/register_02.png) left 8px center no-repeat #f3f3f3;}
+ .inputbg1{ background:url(http://www.luru123.com/store/images/register_03.png) left 8px center no-repeat #f3f3f3;-moz-background:url(http://www.luru123.com/store/images/register_03.png) left 8px center no-repeat #f3f3f3;-webkit-background:url(http://www.luru123.com/store/images/register_03.png) left 8px center no-repeat #f3f3f3;}
  .inputbg2{ background:url(http://www.luru123.com/store/images/register_04.png) left 8px center no-repeat #f3f3f3;-moz-background:url(http://www.luru123.com/store/images/register_04.png) left 8px center no-repeat #f3f3f3;-webkit-background:url(http://www.luru123.com/store/images/register_04.png) left 8px center no-repeat #f3f3f3;}
  .inputbg3{ background:url(http://www.luru123.com/store/images/register_05.png) left 8px center no-repeat #f3f3f3;-moz-background:url(http://www.luru123.com/store/images/register_05.png) left 8px center no-repeat #f3f3f3;-webkit-background:url(http://www.luru123.com/store/images/register_05.png) left 8px center no-repeat #f3f3f3;}
  .inputbg4{ background:url(http://www.luru123.com/store/images/register_15.png) left 8px center no-repeat #f3f3f3;-moz-background:url(http://www.luru123.com/store/images/register_15.png) left 8px center no-repeat #f3f3f3;-webkit-background:url(http://www.luru123.com/store/images/register_15.png) left 8px center no-repeat #f3f3f3;}
@@ -298,7 +298,7 @@ border-radius: 5px;padding-top: 0.5%;top: 2.5%;}
  -webkit-border-radius:5px;}
 
 /*底部菜单*/
-.menwrap{position:fixed;right:0;bottom:0;width:100%;height:50px;z-index: 90000;}
+.menwrap{position:fixed;right:0;bottom:0;width:104%;height:50px;z-index: 90000;}
 .expan2{float:left;width:50px;height:50px;margin-top:0;margin-right:0;border-radius:0;-webkit-border-radius:0;opacity:1;border-top:1px solid #c7c7c7;border-right:1px solid #c7c7c7;background: url(http://www.luru123.com/store/images/home.png) left 12px center no-repeat #fafafa;box-sizing:border-box;-webkit-box-sizing:border-box; cursor:pointer}
 .expan2 a{ display:block;width:50px;height:50px;}
 .expan3{width:40px;height:40px;margin-left:4px;margin-top:4px;background:#fafafa;background-size:20px 20px;border-radius:20px;-webkit-border-radius:20px;opacity:0.5;}
