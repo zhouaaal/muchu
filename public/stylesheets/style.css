@@ -176,7 +176,7 @@ outline: none;}
 }
 /*注册页面*/
 .registpage{float:left;position: relative; z-index:999; width:100%}
-.infobox{ float:left;position: relative; z-index:999;margin-left:2.5%; margin-top:2.5%; width:95%; background-color:#f3f3f3;
+.infobox{ float:left;position: relative; z-index:999;margin-left:2.5%; margin-top:-0.5%; width:95%; background-color:#f3f3f3;
  border-radius:5px;
  -moz-border-radius:5px;
  -webkit-border-radius:5px;}
