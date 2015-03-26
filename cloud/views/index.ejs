@@ -40,82 +40,21 @@
 
 <div class="copyright">CopyRight 2015  创思维力，All rights reserved.</div>
 <div class="menwrap">
-	<div class="expan2"><a href="Index.html"></a></div>
+	<div class="expan2"><a href="http://www.luru123.com/store/Index.html"></a></div>
     <div class="btn3 clearfix">
         <div class="menu">
-            <div class="bt-name">微官网</div>
+            <div class="bt-name"><a href="http://www.luru123.com/store/Index.html">首页</a></div>
             <div class="sanjiao"></div>
-            <ul class="new-sub margin10">
-                <li class="pipe2"><a href="Index.html">商家导航</a></li>
-                <li class="pipe1"><a href="#" >微场景</a></li>
-                <li class="pipe1"><a href="#" >刮刮卡</a></li>
-                <li><img src="http://www.luru123.com/store/images/arrow-down.png" width="16" height="16" style="position:absolute; bottom:-16px"></li>
-            </ul>
         </div>
         <div class="menu">
-            <div class="bt-name">便民服务</div>
+            <div class="bt-name"><a href="http://muchubox.blogspot.jp/">暮秋盒子</a></div>
             <div class="sanjiao"></div>
-            <ul class="new-sub margin10">
-                <li class="pipe2"><a href="#">招聘</a></li>
-                <li class="pipe1"><a href="#" >旅游</a></li>
-                <li class="pipe1"><a href="#" >手机</a></li>
-                <li class="pipe1"><a href="#" >按摩</a></li>
-                <li class="pipe1"><a href="#" >电话卡</a></li>
-                <li><img src="http://www.luru123.com/store/images/arrow-down.png" width="16" height="16" style="position:absolute; bottom:-16px"></li>
-            </ul>
         </div>
         <div class="menu" >
-        	<div class="bt-name">暮秋盒子</div>
+        	<div class="bt-name"><a href="http://mp.weixin.qq.com/s?__biz=MzAxMDI1MjczMA==&mid=203646259&idx=1&sn=39e22043abbe065f0966f4bd8783202a#rd">关注我们</a></div>
         	<div class="sanjiao"></div>
-            <ul class="new-sub margin10">
-                <li class="pipe2"><a href="#">一键购买</a></li>
-                <li class="pipe1"><a href="#" >我要看电视</a></li>
-                <li class="pipe1"><a href="#" >说明</a></li>
-                <li class="pipe1"><a href="#" >价目表</a></li>
-                <li class="pipe1"><a href="#" >投诉与建议</a></li>
-                <li><img src="http://www.luru123.com/store/images/arrow-down.png" width="16" height="16" style="position:absolute; bottom:-16px; text-align:center"></li>
-            </ul>
-            </ul>
         </div>
 	</div>
 </div>
-
-<script type="text/javascript" src="http://www.luru123.com/store/store/jquery.min.js"></script>
-<script>
-$(".menu").click(function() {
-    if ($(this).hasClass("cura")) {
-        $(this).children(".new-sub").hide(); //当前菜单下的二级菜单隐藏
-        $(".menu").removeClass("cura"); //同一级的菜单项
-    } else {
-        $(".menu").removeClass("cura"); //移除所有的样式
-        $(this).addClass("cura"); //给当前菜单添加特定样式
-        $(".new-sub").hide(); //隐藏所有的二级菜单
-        $(this).children(".new-sub").show(); //展示当前的二级菜单
-    }
-});
-</script>
-<script type="text/javascript">
-var count = document.getElementById("thelist").getElementsByTagName("img").length;	
-
-var count2 = document.getElementsByClassName("menuimg").length;
-
-for(i=0;i<count;i++){
- document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
-}
-
-document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
-
-setInterval(function(){
-	myScroll.scrollToPage('next', 0,400,count);
-},3500 );
-
-window.onresize = function(){ 
-	for(i=0;i<count;i++){
-		document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
-	}
- document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
-}
-</script>
-
 </body>
 </html>
