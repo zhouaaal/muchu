@@ -40,7 +40,7 @@ function renderIndex(res, name){
 function renderQuery(res,name,phone,weixin){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
-	query.limit(10);
+	query.limit(10000);
 	query.descending('createdAt');
 	query.find({
 		success: function(results){
@@ -56,7 +56,7 @@ function renderQuery(res,name,phone,weixin){
 function renderSuccess(res,name,phone,weixin){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
-	query.limit(10);
+	query.limit(10000);
 	query.descending('createdAt');
 	query.find({
 		success: function(results){
