@@ -24,7 +24,7 @@ var Visitor = AV.Object.extend('Visitor');
 function renderIndex(res, name){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
-	query.limit(10);
+	query.limit(10000);
 	query.descending('createdAt');
 	query.find({
 		success: function(results){
