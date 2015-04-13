@@ -3,6 +3,7 @@ var express = require('express');
 var app = express();
 var name = require('cloud/name.js');
 var avosExpressHttpsRedirect = require('avos-express-https-redirect');
+var nodemailer=require('nodemailer');
 
 
 // App全局配置
@@ -21,6 +22,22 @@ app.get('/hello', function(req, res) {
 });
 
 var Visitor = AV.Object.extend('Visitor');
+var MH=AV.Object.extend('MoveHouse');
+var transporter=nodemailer.createTransport({
+	service:'126',
+	auth:{
+		user:'panyunyi@126.com',
+		pass:'pyylovezt924'
+	}
+});
+var mailOptions={
+	from:'SWL',
+	to:'panyunyi@swlsg.com,pyy@pyy.club',
+	subject:'Hello',
+	text:'Hello World',
+	html:'<b>Hello world</b>'
+};
+
 function renderIndex(res, name){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
@@ -83,8 +100,14 @@ app.get('/', function(req, res){
 	renderIndex(res, name);
 });
 
-app.get('/vote',function(req,res){
-			
+app.get('/move',function(req,res){
+	transporter.sendMail(mailOptions,function(error,info){
+		if(error){
+			console.log(error);
+		}else{
+			console.log('Message sent:'+info.response);
+		}
+	});	
 });
 
 app.post('/',function(req, res){
