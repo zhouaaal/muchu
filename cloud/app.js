@@ -4,7 +4,6 @@ var app = express();
 var name = require('cloud/name.js');
 var avosExpressHttpsRedirect = require('avos-express-https-redirect');
 var nodemailer=require('nodemailer');
-//var smtpTransport = require('nodemailer-smtp-transport');
 
 
 // App全局配置
@@ -33,7 +32,7 @@ var transporter=nodemailer.createTransport({
 });
 var mailOptions={
 	from:'SWL',
-	to:'panyunyi@swlsg.com,pyy@pyy.club,panyunyi@126.com',
+	to:'panyunyi@swlsg.com,panyunyi@126.com',
 	subject:'Hello',
 	text:'Hello World',
 	html:'<b>Hello world</b>'
@@ -106,6 +105,7 @@ app.get('/move',function(req,res){
 		if(error){
 			console.log(error);
 		}else{
+			res.render('hello', { message: 'Congrats, you just set up your app!' });
 			console.log('Message sent:'+info.response);
 		}
 	});	
