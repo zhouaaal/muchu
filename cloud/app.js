@@ -4,7 +4,7 @@ var app = express();
 var name = require('cloud/name.js');
 var avosExpressHttpsRedirect = require('avos-express-https-redirect');
 var nodemailer=require('nodemailer');
-var smtpTransport = require('nodemailer-smtp-transport');
+//var smtpTransport = require('nodemailer-smtp-transport');
 
 
 // App全局配置
@@ -24,14 +24,13 @@ app.get('/hello', function(req, res) {
 
 var Visitor = AV.Object.extend('Visitor');
 var MH=AV.Object.extend('MoveHouse');
-var transporter=nodemailer.createTransport(smtpTransport({
-	host:'smtp.126.com',
-	port:25,
+var transporter=nodemailer.createTransport({
+	service:'Gmail',
 	auth:{
 		user:'panyunyi@126.com',
 		pass:'pyylovezt924'
 	}
-}));
+});
 var mailOptions={
 	from:'SWL',
 	to:'panyunyi@swlsg.com,pyy@pyy.club',
