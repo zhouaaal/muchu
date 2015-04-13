@@ -23,13 +23,14 @@ app.get('/hello', function(req, res) {
 
 var Visitor = AV.Object.extend('Visitor');
 var MH=AV.Object.extend('MoveHouse');
-var transporter=nodemailer.createTransport({
-	service:'126',
+var transporter=nodemailer.createTransport(smtpTransport({
+	host:'smtp.126.com',
+	port:25,
 	auth:{
 		user:'panyunyi@126.com',
 		pass:'pyylovezt924'
 	}
-});
+}));
 var mailOptions={
 	from:'SWL',
 	to:'panyunyi@swlsg.com,pyy@pyy.club',
