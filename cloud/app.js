@@ -23,10 +23,10 @@ app.get('/hello', function(req, res) {
 var Visitor = AV.Object.extend('Visitor');
 var MH=AV.Object.extend('MoveHouse');
 var transporter=nodemailer.createTransport({
-	service:'QQ',
+	service:'Gmail',
 	auth:{
-		user:'173985652@qq.com',
-		pass:'pyylovezt(@$'
+		user:'panyunyi1234@gmail.com',
+		pass:'51153520314'
 	}
 });
 var mailOptions={
