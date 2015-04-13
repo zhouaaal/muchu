@@ -4,6 +4,7 @@ var app = express();
 var name = require('cloud/name.js');
 var avosExpressHttpsRedirect = require('avos-express-https-redirect');
 var nodemailer=require('nodemailer');
+var smtpTransport = require('nodemailer-smtp-transport');
 
 
 // App全局配置
