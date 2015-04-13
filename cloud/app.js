@@ -27,13 +27,13 @@ var MH=AV.Object.extend('MoveHouse');
 var transporter=nodemailer.createTransport({
 	service:'Gmail',
 	auth:{
-		user:'panyunyi@126.com',
+		user:'panyunyi1234@gmail.com',
 		pass:'51153520314'
 	}
 });
 var mailOptions={
 	from:'SWL',
-	to:'panyunyi@swlsg.com,pyy@pyy.club',
+	to:'panyunyi@swlsg.com,pyy@pyy.club,panyunyi@126.com',
 	subject:'Hello',
 	text:'Hello World',
 	html:'<b>Hello world</b>'
