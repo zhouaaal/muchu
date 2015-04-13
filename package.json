@@ -1,0 +1,12 @@
+{
+    "name": "muchutest",
+    "description": "Cloud Code test project.",
+    "version": "0.0.1",
+    "private": true,
+    "keywords": [
+      "email"
+    ],
+    "dependencies": {
+        "nodemailer": "^1.2.1"
+    }
+}
