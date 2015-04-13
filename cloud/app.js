@@ -5,7 +5,6 @@ var name = require('cloud/name.js');
 var avosExpressHttpsRedirect = require('avos-express-https-redirect');
 var nodemailer=require('nodemailer');
 
-
 // App全局配置
 //设置模板目录
 if(__production)
@@ -24,14 +23,14 @@ app.get('/hello', function(req, res) {
 var Visitor = AV.Object.extend('Visitor');
 var MH=AV.Object.extend('MoveHouse');
 var transporter=nodemailer.createTransport({
-	service:'Gmail',
+	service:'QQ',
 	auth:{
-		user:'panyunyi1234@gmail.com',
-		pass:'51153520314'
+		user:'173985652@qq.com',
+		pass:'pyylovezt(@$'
 	}
 });
 var mailOptions={
-	from:'SWL',
+	from:'173985652',
 	to:'panyunyi@swlsg.com,panyunyi@126.com',
 	subject:'Hello',
 	text:'Hello World',
