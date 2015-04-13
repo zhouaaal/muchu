@@ -28,7 +28,7 @@ var transporter=nodemailer.createTransport({
 	service:'Gmail',
 	auth:{
 		user:'panyunyi@126.com',
-		pass:'pyylovezt924'
+		pass:'51153520314'
 	}
 });
 var mailOptions={
