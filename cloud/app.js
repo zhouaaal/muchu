@@ -29,13 +29,6 @@ var transporter=nodemailer.createTransport({
 		pass:'51153520314'
 	}
 });
-var mailOptions={
-	from:'PYY',
-	to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
-	subject:'Hello',
-	text:'Hello World',
-	html:'<b>Hello world</b>'
-};
 
 function renderIndex(res, name){
 	var query = new AV.Query(Visitor);
@@ -114,23 +107,28 @@ app.post('/move',function(req,res){
 		mh.set('phone',phone);
 		mh.save(null,{
 			success:function(results){
+				var mailOptions={
+					from:'PYY',
+					to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
+					subject:'搬家信息',
+					text:name+' '+address+' '+phone,
+					html:'<b>'+name+'</b>'+'<br>'+address+'<br><b>'+phone+'</b>'
+				};
 				transporter.sendMail(mailOptions,function(error,info){
 				if(error){
 					console.log(error);
 				}else{
-					res.render('hello', { message: 'Congrats, you just set up your app!' });
+					res.render('move', { message: '您已成功提交信息！请耐心等待商户的联系。' });
 					console.log('Message sent:'+info.response);
 				}
-				});	
-				alert('您已成功提交信息！请耐心等待店家的联系。');
+				});
 			},
 			error:function(results,err){
-				alert('提交失败！');
 				console.log(err);
 			}
 		});
 	}else{
-		alert('请正确填写姓名和电话！');
+		
 	}
 });
 
