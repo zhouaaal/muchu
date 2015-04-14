@@ -128,7 +128,7 @@ app.post('/move',function(req,res){
 			}
 		});
 	}else{
-		
+		console.log('Message'+address);
 	}
 });
 
