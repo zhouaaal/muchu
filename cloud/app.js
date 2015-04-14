@@ -30,8 +30,8 @@ var transporter=nodemailer.createTransport({
 	}
 });
 var mailOptions={
-	from:'173985652',
-	to:'panyunyi@swlsg.com,panyunyi@126.com',
+	from:'PYY',
+	to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
 	subject:'Hello',
 	text:'Hello World',
 	html:'<b>Hello world</b>'
@@ -100,14 +100,18 @@ app.get('/', function(req, res){
 });
 
 app.get('/move',function(req,res){
-	transporter.sendMail(mailOptions,function(error,info){
+	res.render('move');
+});
+
+app.post('/move',function(req,res){
+		transporter.sendMail(mailOptions,function(error,info){
 		if(error){
 			console.log(error);
 		}else{
 			res.render('hello', { message: 'Congrats, you just set up your app!' });
 			console.log('Message sent:'+info.response);
 		}
-	});	
+	});		
 });
 
 app.post('/',function(req, res){
