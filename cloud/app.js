@@ -104,14 +104,34 @@ app.get('/move',function(req,res){
 });
 
 app.post('/move',function(req,res){
-		transporter.sendMail(mailOptions,function(error,info){
-		if(error){
-			console.log(error);
-		}else{
-			res.render('hello', { message: 'Congrats, you just set up your app!' });
-			console.log('Message sent:'+info.response);
-		}
-	});		
+	var address=req.body.address;
+	var name=req.body.name;
+	var phone=req.body.phone;
+	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
+		var mh=new MH();
+		mh.set('address',address);
+		mh.set('name',name);
+		mh.set('phone',phone);
+		mh.save(null,{
+			success:function(results){
+				transporter.sendMail(mailOptions,function(error,info){
+				if(error){
+					console.log(error);
+				}else{
+					res.render('hello', { message: 'Congrats, you just set up your app!' });
+					console.log('Message sent:'+info.response);
+				}
+				});	
+				alert('您已成功提交信息！请耐心等待店家的联系。');
+			},
+			error:function(results,err){
+				alert('提交失败！');
+				console.log(err);
+			}
+		});
+	}else{
+		alert('请正确填写姓名和电话！');
+	}
 });
 
 app.post('/',function(req, res){
