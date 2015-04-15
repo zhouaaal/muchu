@@ -78,6 +78,24 @@ function renderSuccess(res,name,phone,weixin){
 	});
 }
 
+function sendEmails(name,phone,address){
+	var mailOptions={
+			from:'PYY<panyunyi1234@gmail.com>',
+			to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
+			subject:'搬家信息',
+			text:name,
+			html:'<b>姓名: '+name+'</b>'+'<br><b>电话: '+phone+'</b><br><b>地址: '+address+'</b>'
+		};
+		transporter.sendMail(mailOptions,function(error,info){
+					if(error){
+						console.log(error);
+					}else{
+						console.log('Message sent: '+info.response);
+						console.log(mailOptions);
+					}
+					}); 
+}
+
 app.get('/query',function(req,res){
 	var name=req.query.name;
 	var phone=req.query.phone;
@@ -101,42 +119,19 @@ app.post('/move',function(req,res){
 	var name=req.body.name;
 	var phone=req.body.phone;
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
-		var mailOptions={
-			from:'PYY<panyunyi1234@gmail.com>',
-			to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
-			subject:'搬家信息',
-			text:name,
-			html:'<b>姓名:'+name+'</b>'+'<br><b>电话:'+phone+'</b><br>地址:'+address
-		};
-		transporter.sendMail(mailOptions,function(error,info){
-					if(error){
-						console.log(error);
-					}else{
-						console.log('Message sent: '+info.response);
-						res.send('提交成功!');
-						console.log(mailOptions);
-					}
-					}); 
-		/*var mh=new MH();
+		var mh=new MH();
 		mh.set('address',address);
 		mh.set('name',name);
 		mh.set('phone',phone);
 		mh.save(null,{
 			success:function(results){
-				transporter.sendMail(mailOptions,function(error,info){
-					if(error){
-						console.log(error);
-					}else{
-						console.log('Message sent: '+info.response);
-						res.send('提交成功!');
-						console.log(mailOptions);
-					}
-					}); 
+				sendEmails(name,phone,address);
+				res.send('OK!')
 			},
 			error:function(results,err){
 				console.log(err);
 			}
-		});*/
+		});
 		
 	}else{
 		console.log('Message'+address);
