@@ -29,7 +29,13 @@ var transporter=nodemailer.createTransport({
 		pass:'51153520314'
 	}
 });
-
+var mailOptions={
+					from:'PYY',
+					to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
+					subject:'搬家信息',
+					text:'name',
+					html:'name'
+				};
 function renderIndex(res, name){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
@@ -112,13 +118,7 @@ app.post('/move',function(req,res){
 		mh.set('phone',phone);
 		mh.save(null,{
 			success:function(results){
-				var mailOptions={
-					from:'PYY',
-					to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
-					subject:'搬家信息',
-					text:'name',
-					html:'name'
-				};
+				
 				transporter.sendMail(mailOptions,function(error,info){
 				if(error){
 					console.log(error);
