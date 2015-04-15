@@ -93,8 +93,8 @@ app.get('/', function(req, res){
 });
 
 app.get('/move',function(req,res){
-	var name=req.query.name;
-	if(name){
+	var msg=req.query.message;
+	if(msg){
 		res.render('move',{msg:'OK'});
 	}else{
 		res.render('move',{msg:'FAIL'});
@@ -105,7 +105,6 @@ app.post('/move',function(req,res){
 	var address=req.body.address;
 	var name=req.body.name;
 	var phone=req.body.phone;
-	console.log(req.body.address);
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
 		var mh=new MH();
 		mh.set('address',address);
