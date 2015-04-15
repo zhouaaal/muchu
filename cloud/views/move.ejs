@@ -62,8 +62,8 @@
   </div>
   <Script Language="JavaScript"> 
     function alerting(){
-      if(!<%=msg%>)
-       {}else{alert(<%=msg%>+"提交成功!"); }
+      if(<%=msg%>=="OK")
+       {alert(<%=msg%>+"提交成功!");}
     }
 
   </Script> 
