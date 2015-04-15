@@ -100,28 +100,29 @@ app.post('/move',function(req,res){
 	var address=req.body.address;
 	var name=req.body.name;
 	var phone=req.body.phone;
-	var mailOptions={
-		from:'PYY<panyunyi1234@gmail.com>',
-		to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
-		subject:'搬家信息',
-		text:address,
-		html:address
-	};
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
-		transporter.sendMail(mailOptions,function(error,info){
+		/*transporter.sendMail(mailOptions,function(error,info){
 		if(error){
 			console.log(error);
 		}else{
 			console.log('Message sent: '+info.response);
 		}
-		});
+		});*/
 		var mh=new MH();
 		mh.set('address',address);
 		mh.set('name',name);
 		mh.set('phone',phone);
 		mh.save(null,{
 			success:function(results){
-				res.render('hello', { message: 'Congrats!' });
+				res.send('1');
+				var mailOptions={
+					from:'PYY<panyunyi1234@gmail.com>',
+					to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
+					subject:'搬家信息',
+					text:address,
+					html:address
+					};
+				console.log(mailOptions);	
 			},
 			error:function(results,err){
 				console.log(err);
