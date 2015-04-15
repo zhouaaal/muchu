@@ -126,7 +126,7 @@ app.post('/move',function(req,res){
 		mh.save(null,{
 			success:function(results){
 				sendEmails(name,phone,address);
-				res.send('OK!')
+				res.sender('ok');
 			},
 			error:function(results,err){
 				console.log(err);
