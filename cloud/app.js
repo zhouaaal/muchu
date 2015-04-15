@@ -114,15 +114,22 @@ app.post('/move',function(req,res){
 		mh.set('phone',phone);
 		mh.save(null,{
 			success:function(results){
-				res.send('1');
+				res.send('提交成功!');
 				var mailOptions={
 					from:'PYY<panyunyi1234@gmail.com>',
 					to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
 					subject:'搬家信息',
-					text:address,
-					html:address
+					text:name,
+					html:'<b>'+name+'</b>'+'<br><b>'+phone+'</b><br>'+address
 					};
-				console.log(mailOptions);	
+				console.log(mailOptions);
+				transporter.sendMail(mailOptions,function(error,info){
+					if(error){
+						console.log(error);
+					}else{
+						console.log('Message sent: '+info.response);
+					}
+					});
 			},
 			error:function(results,err){
 				console.log(err);
