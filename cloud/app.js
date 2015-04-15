@@ -93,13 +93,17 @@ app.get('/', function(req, res){
 });
 
 app.get('/move',function(req,res){
-	res.render('move');
+	var name=req.query.name;
+	if(name){
+		res.render('move',msg:name);
+	}
 });
 
 app.post('/move',function(req,res){
 	var address=req.body.address;
 	var name=req.body.name;
 	var phone=req.body.phone;
+	console.log(req.body.address);
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
 		var mh=new MH();
 		mh.set('address',address);
