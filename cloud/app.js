@@ -104,8 +104,8 @@ app.post('/move',function(req,res){
 		from:'PYY',
 		to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
 		subject:'搬家信息',
-		text:name,
-		html:name+' '+address+' '+phone
+		text:'name',
+		html:'name'
 	};
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
 		var mh=new MH();
