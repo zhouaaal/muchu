@@ -29,13 +29,7 @@ var transporter=nodemailer.createTransport({
 		pass:'51153520314'
 	}
 });
-var mailOptions={
-					from:'PYY',
-					to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
-					subject:'搬家信息',
-					text:'name',
-					html:'name'
-				};
+
 function renderIndex(res, name){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
@@ -99,18 +93,20 @@ app.get('/', function(req, res){
 });
 
 app.get('/move',function(req,res){
-	var msg=req.query.message;
-	if(msg){
-		res.render('move',{msg:'OK'});
-	}else{
-		res.render('move',{msg:'FAIL'});
-	}
+	res.render('move');
 });
 
 app.post('/move',function(req,res){
 	var address=req.body.address;
 	var name=req.body.name;
 	var phone=req.body.phone;
+	var mailOptions={
+		from:'PYY',
+		to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
+		subject:'搬家信息',
+		text:name,
+		html:name+' '+address+' '+phone
+	};
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
 		var mh=new MH();
 		mh.set('address',address);
@@ -118,13 +114,11 @@ app.post('/move',function(req,res){
 		mh.set('phone',phone);
 		mh.save(null,{
 			success:function(results){
-				
 				transporter.sendMail(mailOptions,function(error,info){
 				if(error){
 					console.log(error);
 				}else{
-					res.render('move', { message: '您已成功提交信息！请耐心等待商户的联系。' });
-					console.log('Message sent:'+info.response);
+					console.log('Message sent: '+info.response);
 				}
 				});
 			},
