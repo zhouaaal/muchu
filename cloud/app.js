@@ -96,6 +96,8 @@ app.get('/move',function(req,res){
 	var name=req.query.name;
 	if(name){
 		res.render('move',{msg:name});
+	}else{
+		res.render('move');
 	}
 });
 
