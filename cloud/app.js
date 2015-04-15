@@ -108,21 +108,21 @@ app.post('/move',function(req,res){
 			text:'name',
 			html:'ttt'
 		};
-		transporter.sendMail(mailOptions,function(error,info){
-					if(error){
-						console.log(error);
-					}else{
-						console.log('Message sent: '+info.response);
-					}
-					}); 
 		var mh=new MH();
 		mh.set('address',address);
 		mh.set('name',name);
 		mh.set('phone',phone);
 		mh.save(null,{
 			success:function(results){
-				res.send('提交成功!');
-				console.log(mailOptions);
+				transporter.sendMail(mailOptions,function(error,info){
+					if(error){
+						console.log(error);
+					}else{
+						console.log('Message sent: '+info.response);
+						res.send('提交成功!');
+						console.log(mailOptions);
+					}
+					}); 
 			},
 			error:function(results,err){
 				console.log(err);
