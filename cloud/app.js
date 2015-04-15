@@ -119,7 +119,7 @@ app.post('/move',function(req,res){
 	var name=req.body.name;
 	var phone=req.body.phone;
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
-		var mh=new MH();
+		/*var mh=new MH();
 		mh.set('address',address);
 		mh.set('name',name);
 		mh.set('phone',phone);
@@ -132,9 +132,10 @@ app.post('/move',function(req,res){
 				console.log(err);
 			}
 		});
-		
+		*/
+		sendEmails(name,phone,address);
 	}else{
-		console.log('Message'+address);
+		console.log('Message is empty!');
 	}
 });
 
