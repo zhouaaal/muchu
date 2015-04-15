@@ -118,6 +118,7 @@ app.post('/move',function(req,res){
 				if(error){
 					console.log(error);
 				}else{
+					res.render('hello', { message: 'Congrats!' });
 					console.log('Message sent: '+info.response);
 				}
 				});
