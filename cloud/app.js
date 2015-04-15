@@ -100,14 +100,15 @@ app.post('/move',function(req,res){
 	var address=req.body.address;
 	var name=req.body.name;
 	var phone=req.body.phone;
+	var mailOptions={
+					from:'PYY<panyunyi1234@gmail.com>',
+					to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
+					subject:'搬家信息',
+					text:name,
+					html:'<b>'+name+'</b>'+'<br><b>'+phone+'</b><br>'+address
+					};
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
-		/*transporter.sendMail(mailOptions,function(error,info){
-		if(error){
-			console.log(error);
-		}else{
-			console.log('Message sent: '+info.response);
-		}
-		});*/
+		
 		var mh=new MH();
 		mh.set('address',address);
 		mh.set('name',name);
@@ -115,13 +116,7 @@ app.post('/move',function(req,res){
 		mh.save(null,{
 			success:function(results){
 				res.send('提交成功!');
-				var mailOptions={
-					from:'PYY<panyunyi1234@gmail.com>',
-					to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
-					subject:'搬家信息',
-					text:name,
-					html:'<b>'+name+'</b>'+'<br><b>'+phone+'</b><br>'+address
-					};
+				
 				console.log(mailOptions);
 				transporter.sendMail(mailOptions,function(error,info){
 					if(error){
