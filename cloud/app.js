@@ -80,7 +80,7 @@ function renderSuccess(res,name,phone,weixin){
 
 function sendEmails(name,phone,address){
 	var mailOptions={
-			from:'PYY<panyunyi1234@gmail.com>',
+			from:'PYY<panyunyi1234@yahoo.com>',
 			to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
 			subject:'搬家信息',
 			text:name,
