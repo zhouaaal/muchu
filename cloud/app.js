@@ -22,13 +22,14 @@ app.get('/hello', function(req, res) {
 
 var Visitor = AV.Object.extend('Visitor');
 var MH=AV.Object.extend('MoveHouse');
-var transporter=nodemailer.createTransport({
-	service:'QQ',
+var transporter=nodemailer.createTransport(smtpTransport({
+	host: 'smtp.126.com',
+    	port: 25,
 	auth:{
-		user:'173985652@qq.com',
-		pass:'51153520314'
+		user:'panyunyi@126.com',
+		pass:'pyylovezt924'
 	}
-});
+}));
 
 function renderIndex(res, name){
 	var query = new AV.Query(Visitor);
@@ -80,8 +81,8 @@ function renderSuccess(res,name,phone,weixin){
 
 function sendEmails(name,phone,address){
 	var mailOptions={
-			from:'PYY<173985652@qq.com>',
-			to:'panyunyi@swlsg.com,panyunyi@126.com',
+			from:'PYY<panyunyi@126.com>',
+			to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
 			subject:'搬家信息',
 			text:name,
 			html:'<b>姓名: '+name+'</b>'+'<br><b>电话: '+phone+'</b><br><b>地址: '+address+'</b>'
