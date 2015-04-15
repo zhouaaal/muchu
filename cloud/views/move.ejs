@@ -62,11 +62,11 @@
   </div>
   <Script Language="JavaScript"> 
     function alerting(){
-      if(<%=msg%>)
-       alert(<%=msg%>+"提交成功!"); 
-}
+      if(!<%=msg%>)
+       {}else{alert(<%=msg%>+"提交成功!"); }
+    }
 
-</Script> 
+  </Script> 
 </div>
 </body>
 </html>
