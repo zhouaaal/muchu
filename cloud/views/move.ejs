@@ -61,8 +61,9 @@
     <p align="center">©2015 创思维力</p>
   </div>
   <Script Language="JavaScript"> 
-    function alerting(){  
-     alert("提交成功!"); 
+    function alerting(){
+      if(<%=msg%>)
+       alert(<%=msg%>+"提交成功!"); 
 }
 
 </Script> 
