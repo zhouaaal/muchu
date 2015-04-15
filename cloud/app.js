@@ -108,13 +108,13 @@ app.post('/move',function(req,res){
 			text:name,
 			html:'<b>姓名:'+name+'</b>'+'<br><b>电话:'+phone+'</b><br>地址:'+address
 		};
-		transporter.sendMail(mailOptions,function(error,info){
+		function(){ transporter.sendMail(mailOptions,function(error,info){
 					if(error){
 						console.log(error);
 					}else{
 						console.log('Message sent: '+info.response);
 					}
-					});
+					});}
 		var mh=new MH();
 		mh.set('address',address);
 		mh.set('name',name);
