@@ -100,9 +100,8 @@ app.post('/move',function(req,res){
 	var address=req.body.address;
 	var name=req.body.name;
 	var phone=req.body.phone;
-	v
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
-		ar mailOptions={
+		var mailOptions={
 			from:'PYY<panyunyi1234@gmail.com>',
 			to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
 			subject:'搬家信息',
