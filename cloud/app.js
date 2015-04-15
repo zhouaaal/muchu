@@ -116,8 +116,8 @@ app.post('/move',function(req,res){
 					from:'PYY',
 					to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
 					subject:'搬家信息',
-					text:name+' '+address+' '+phone,
-					html:'<b>'+name+'</b>'+'<br>'+address+'<br><b>'+phone+'</b>'
+					text:name,
+					html:name
 				};
 				transporter.sendMail(mailOptions,function(error,info){
 				if(error){
