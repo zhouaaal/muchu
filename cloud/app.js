@@ -86,7 +86,7 @@ function sendEmails(name,phone,address){
 			to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
 			subject:'搬家信息',
 			text:name,
-			html:'<b>姓名: '+name+'</b>'+'<br><b>电话: '+phone+'</b><br><b>地址: '+address+'</b>'
+			html:'<b>姓名: </b>'+name+'<br><b>电话: </b>'+phone+'<br><b>地址: </b>'+address
 		};
 		transporter.sendMail(mailOptions,function(error,info){
 					if(error){
@@ -121,22 +121,6 @@ app.post('/move',function(req,res){
 	var name=req.body.name;
 	var phone=req.body.phone;
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
-		/*var mailOptions={
-			from:'PYY<panyunyi@126.com>',
-			to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
-			subject:'搬家信息',
-			text:name,
-			html:'<b>姓名: '+name+'</b>'+'<br><b>电话: '+phone+'</b><br><b>地址: '+address+'</b>'
-		};
-		transporter.sendMail(mailOptions,function(error,info){
-					if(error){
-						console.log(error);
-					}else{
-						console.log('Message sent: '+info.response);
-						res.render('ok');
-						console.log(mailOptions);
-					}
-					}); */
 		var mh=new MH();
 		mh.set('address',address);
 		mh.set('name',name);
