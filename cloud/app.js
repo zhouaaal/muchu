@@ -23,6 +23,7 @@ app.get('/hello', function(req, res) {
 
 var Visitor = AV.Object.extend('Visitor');
 var MH=AV.Object.extend('MoveHouse');
+var TK=AV.Object.extend('Ticket');
 var transporter=nodemailer.createTransport(smtpTransport({
 	host: 'smtp.126.com',
     	port: 25,
@@ -83,7 +84,7 @@ function renderSuccess(res,name,phone,weixin){
 function sendEmails(name,phone,address){
 	var mailOptions={
 			from:'PYY<panyunyi@126.com>',
-			to:'panyunyi@swlsg.com,panyunyi@126.com,pyy@pyy.club',
+			to:'panyunyi@swlsg.com,panyunyi@126.com,1@pyy.io',
 			subject:'搬家信息',
 			text:name,
 			html:'<b>姓名: </b>'+name+'<br><b>电话: </b>'+phone+'<br><b>地址: </b>'+address
@@ -96,6 +97,26 @@ function sendEmails(name,phone,address){
 						console.log(mailOptions);
 					}
 					}); 
+}
+
+function sendTickets(name,phone,start,end,date,adults,child){
+	var mailOptions={
+			from:'PYY<panyunyi@126.com>',
+			to:'panyunyi@swlsg.com,panyunyi@126.com,1@pyy.io',
+			subject:'求机票',
+			text:name,
+			html:'<b>姓名: </b>'+name+'<br><b>电话: </b>'+phone+'<br><b>出发地: </b>'+start+'<br><b>目的地:</b>'+
+			end+'<br><b>出发日期:</b>'+date+'<br><b>成年人:</b>'+adults+'<br><b>未成年:</b>'+child
+		};
+		transporter.sendMail(mailOptions,function(error,info){
+					if(error){
+						console.log(error);
+					}else{
+						console.log('Message sent: '+info.response);
+						console.log(mailOptions);
+					}
+					}); 
+	}
 }
 
 app.get('/query',function(req,res){
@@ -128,6 +149,41 @@ app.post('/move',function(req,res){
 		mh.save(null,{
 			success:function(results){
 				sendEmails(name,phone,address);
+				res.render('ok');
+			},
+			error:function(results,err){
+				console.log(err);
+			}
+		});
+	}else{
+		console.log('Message is empty!');
+	}
+});
+
+app.get('/ticket',function(req,res){
+	res.render('ticket');
+});
+
+app.post('/ticket',function(req,res){
+	var start=req.body.start;
+	var end=req.body.end;
+	var name=req.body.name;
+	var phone=req.body.phone;
+	var date=req.body.date;
+	var adults=req.body.adults;
+	var child=req.body.child;
+	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
+		var tk=new TK();
+		tk.set('start',start);
+		tk.set('name',name);
+		tk.set('phone',phone);
+		tk.set('end',end);
+		tk.set('date',date);
+		tk.set('adults',adults);
+		tk.set('child',child);
+		tk.save(null,{
+			success:function(results){
+				sendTickets(name,phone,start,end,date,adults,child);
 				res.render('ok');
 			},
 			error:function(results,err){
