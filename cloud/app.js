@@ -116,7 +116,6 @@ function sendTickets(name,phone,start,end,date,adults,child){
 						console.log(mailOptions);
 					}
 					}); 
-	}
 }
 
 app.get('/query',function(req,res){
