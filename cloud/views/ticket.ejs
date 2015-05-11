@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+  <meta charset="UTF-8">
+  <title>在日华人信息</title>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="renderer" content="webkit">
+  <meta http-equiv="Cache-Control" content="no-siteapp" />
+  <link rel="stylesheet" href="stylesheets/amazeui.min.css"/>
+  <link rel="stylesheet" href="assets/css/amazeui.min.css"/>
+  <style>
+    .header {
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 200%;
+      color: #333;
+      margin-top: 30px;
+    }
+    .header p {
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+<div class="header">
+  <div class="am-g">
+    <h1>竞价机票</h1>
+    <p>您的旅游帮手<br/>提交您的信息，获得旅行社的最低机票报价</p>
+  </div>
+  <hr />
+</div>
+<div class="am-g">
+  <div class="am-u-lg-6 am-u-md-8 am-u-sm-centered">
+    <h3>合作旅行社</h3>
+    <hr>
+    <div class="am-btn-group">
+      <a href="#" class="am-btn am-btn-secondary am-btn-sm"><i class="am-icon-github am-icon-sm"></i> 华冨士旅行</a>
+      <a href="#" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-google-plus-square am-icon-sm"></i> 正宏旅行</a>
+      <a href="#" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-stack-overflow am-icon-sm"></i> 安達旅行</a>
+      <a href="#" class="am-btn am-btn-secondary am-btn-sm"><i class="am-icon-github am-icon-sm"></i> 大慶旅行</a>
+      <a href="#" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-google-plus-square am-icon-sm"></i> 安克楽思旅行</a>
+      <a href="#" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-stack-overflow am-icon-sm"></i> 携程旅行</a>
+      <a href="#" class="am-btn am-btn-secondary am-btn-sm"><i class="am-icon-github am-icon-sm"></i> 平安旅行</a>
+      <a href="#" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-google-plus-square am-icon-sm"></i> 毎日旅行</a>
+      <a href="#" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-stack-overflow am-icon-sm"></i> 名申国際旅行</a>
+      <a href="#" class="am-btn am-btn-secondary am-btn-sm"><i class="am-icon-github am-icon-sm"></i> 中国国旅</a>
+      <a href="#" class="am-btn am-btn-success am-btn-sm"><i class="am-icon-google-plus-square am-icon-sm"></i> 産経旅行</a>
+      <a href="#" class="am-btn am-btn-primary am-btn-sm"><i class="am-icon-stack-overflow am-icon-sm"></i> 小米机票</a>
+    </div>
+    <br>
+    <br>
+
+    <form action="/move" method="post" class="am-form">
+      <label for="start">出发地:</label>
+      <input type="start" name="start" id="start" value="">
+      <br>
+       <label for="end">目的地:</label>
+      <input type="end" name="end" id="end" value="">
+      <br>
+       <label for="date">出发日期:</label>
+      <input type="date" name="date" id="date" value="">
+      <br>
+       <label for="adults">成年人数:</label>
+      <input type="adults" name="adults" id="adults" value=""> 
+      <br>
+       <label for="child">未成年人数:</label>
+      <input type="child" name="child" id="child" value="">
+      <br>
+      <label for="name">姓名:</label>
+      <input type="name" name="name" id="name" value="">
+      <br>
+      <label for="phone">电话:</label>
+      <input type="phone" name="phone" id="phone" value="">
+      <br>
+      <div class="am-cf">
+        <input type="submit" name="" value="提 交" class="am-btn am-btn-primary am-btn-sm am-fl am-width">
+      </div>
+    </form>
+    <hr>
+    <p align="center">©2015 创思维力</p>
+  </div>
+</div>
+</body>
