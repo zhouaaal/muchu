@@ -102,7 +102,7 @@ function sendEmails(name,phone,address){
 function sendTickets(name,phone,start,end,date,adults,child){
 	var mailOptions={
 			from:'PYY<panyunyi@126.com>',
-			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp,hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com',
+			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp,hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
 			subject:'求机票',
 			text:name,
 			html:'<b>姓名: </b>'+name+'<br><b>电话: </b>'+phone+'<br><b>出发地: </b>'+start+'<br><b>目的地:</b>'+
