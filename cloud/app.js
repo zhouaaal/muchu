@@ -83,7 +83,7 @@ function renderSuccess(res,name,phone,weixin){
 
 function sendEmails(name,phone,address){
 	var mailOptions={
-			from:'PYY<panyunyi@126.com>',
+			from:'MUCHU<panyunyi@126.com>',
 			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
 			subject:'搬家信息',
 			text:name,
@@ -101,7 +101,7 @@ function sendEmails(name,phone,address){
 
 function sendTickets(name,phone,start,end,date,adults,child){
 	var mailOptions={
-			from:'PYY<panyunyi@126.com>',
+			from:'MUCHU<panyunyi@126.com>',
 			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp,hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
 			subject:'求机票',
 			text:name,
