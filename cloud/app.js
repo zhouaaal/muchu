@@ -99,14 +99,14 @@ function sendEmails(name,phone,address){
 					}); 
 }
 
-function sendTickets(name,phone,start,end,date,adults,child){
+function sendTickets(name,phone,start,end,date,backdate,adults,child){
 	var mailOptions={
 			from:'MUCHU<panyunyi@126.com>',
 			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp,hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
 			subject:'求机票',
 			text:name,
 			html:'<b>姓名: </b>'+name+'<br><b>电话: </b>'+phone+'<br><b>出发地: </b>'+start+'<br><b>目的地:</b>'+
-			end+'<br><b>出发日期:</b>'+date+'<br><b>成年人:</b>'+adults+'<br><b>未成年:</b>'+child
+			end+'<br><b>出发日期:</b>'+date+'<br><b>返回日期:</b>'+backdate+'<br><b>成年人:</b>'+adults+'<br><b>未成年:</b>'+child
 		};
 		transporter.sendMail(mailOptions,function(error,info){
 					if(error){
@@ -171,6 +171,7 @@ app.post('/ticket',function(req,res){
 	var date=req.body.date;
 	var adults=req.body.adults;
 	var child=req.body.child;
+	var backdate=req.body.backdate;
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
 		var tk=new TK();
 		tk.set('start',start);
@@ -180,9 +181,10 @@ app.post('/ticket',function(req,res){
 		tk.set('date',date);
 		tk.set('adults',adults);
 		tk.set('child',child);
+		tk.set('backdate',backdate);
 		tk.save(null,{
 			success:function(results){
-				sendTickets(name,phone,start,end,date,adults,child);
+				sendTickets(name,phone,start,end,date,backdate,adults,child);
 				res.render('ok');
 			},
 			error:function(results,err){
