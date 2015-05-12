@@ -84,7 +84,7 @@ function renderSuccess(res,name,phone,weixin){
 function sendEmails(name,phone,address){
 	var mailOptions={
 			from:'PYY<panyunyi@126.com>',
-			to:'panyunyi@swlsg.com,panyunyi@126.com,1@pyy.io',
+			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
 			subject:'搬家信息',
 			text:name,
 			html:'<b>姓名: </b>'+name+'<br><b>电话: </b>'+phone+'<br><b>地址: </b>'+address
@@ -102,7 +102,7 @@ function sendEmails(name,phone,address){
 function sendTickets(name,phone,start,end,date,adults,child){
 	var mailOptions={
 			from:'PYY<panyunyi@126.com>',
-			to:'panyunyi@swlsg.com,panyunyi@126.com,1@pyy.io',
+			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
 			subject:'求机票',
 			text:name,
 			html:'<b>姓名: </b>'+name+'<br><b>电话: </b>'+phone+'<br><b>出发地: </b>'+start+'<br><b>目的地:</b>'+
