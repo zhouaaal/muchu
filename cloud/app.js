@@ -5,6 +5,7 @@ var name = require('cloud/name.js');
 var avosExpressHttpsRedirect = require('avos-express-https-redirect');
 var nodemailer=require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
+var translate = require('cloud/translate.js');
 
 // App全局配置
 //设置模板目录
@@ -103,11 +104,16 @@ function sendTickets(name,phone,start,end,date,backdate,adults,child){
 	var mailOptions={
 			from:'MUCHU<panyunyi@126.com>',
 			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
-			bcc: 'hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
+			//bcc: 'hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
 			subject:'チケットの予約です',
 			text:name,
-			html:'<b>日本旅游からのお知らせです</b><br><br><b>お客様から新規のお問合せが来ております</b><br><br><b>姓名: </b>'+name+'<br><b>电话: </b>'+phone+'<br><b>出发地: </b>'+start+'<br><b>目的地:</b>'+
-			end+'<br><b>出发日期:</b>'+date+'<br><b>返回日期:</b>'+backdate+'<br><b>成年人:</b>'+adults+'<br><b>未成年:</b>'+child+'<br><br>問題等ございましたら、<br><br>下記連絡先までご連絡お願いいたします。<br><br><p>・～・～・～・～・株式会社SWL JAPAN ～・～・～・～・</p><br><br><p>　　　Muchu   メディア事業部</p><p>　　　　　張　琼　（　チョウ　ケイ　）</p><br><br><p>〒105-0004　東京都港区新橋6-5-3 山田屋ビル4F</p><p>TEL：03-6432-4540　Fax： 03-4578-0106</p><p>E-Mail: zhangqiong@swlsg.jp</p><br><p>・～・～・～・～・～・～・～・～・～・～・～・～・～・</p>'
+			html:'<b>日本旅游からのお知らせです</b><br><br><b>お客様から新規のお問合せが来ております</b><br><br><b><font style="line-height:100%;">姓名: </font></b>'+name+'<br><b><font style="line-height:100%;">电话:</font> </b>'+phone+'<br><b><font style="line-height:100%;">出发地: </font></b>'+start+'<br><b><font style="line-height:100%;">目的地:</font></b>'+
+			end+'<br><b><font style="line-height:100%;">出发日期:</font></b>'+date+'<br><b><font style="line-height:100%;">返回日期:</font></b>'+backdate+'<br><b><font style="line-height:100%;">成年人:</font></b>'+adults+'<br><b><font style="line-height:100%;">未成年:</font></b>'+child+'<br><br><img src="cid:00000001"/><br><br>問題等ございましたら、<br><br>下記連絡先までご連絡お願いいたします。<br><br><p>・～・～・～・～・株式会社SWL JAPAN ～・～・～・～・</p><br><br><p>　　　Muchu   メディア事業部</p><p>　　　　　張　琼　（　チョウ　ケイ　）</p><br><br><p>〒105-0004　東京都港区新橋6-5-3 山田屋ビル4F</p><p>TEL：03-6432-4540　Fax： 03-4578-0106</p><p>E-Mail: zhangqiong@swlsg.jp</p><br><p>・～・～・～・～・～・～・～・～・～・～・～・～・～・</p>',
+			attachments: [{
+			        filename: '01.png',
+			        path: 'http://7xid3k.com1.z0.glb.clouddn.com/r1.jpg',
+			        cid: '00000001'
+			    }]
 		};
 		transporter.sendMail(mailOptions,function(error,info){
 					if(error){
@@ -227,6 +233,8 @@ app.post('/',function(req, res){
 		res.redirect('/');
 	}
 });
+
+
 
 // This line is required to make Express respond to http requests.
 app.listen();
