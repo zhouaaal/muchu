@@ -103,7 +103,7 @@ function sendEmails(name,phone,address){
 function sendTickets(name,phone,start,end,date,backdate,adults,child){
 	var mailOptions={
 			from:'MUCHU<panyunyi@126.com>',
-			to:'liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
+			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
 			//bcc: 'panyunyi@swlsg.com,hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
 			subject:'チケットの予約です',
 			text:name,
