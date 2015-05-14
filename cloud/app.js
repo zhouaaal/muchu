@@ -25,6 +25,7 @@ app.get('/hello', function(req, res) {
 var Visitor = AV.Object.extend('Visitor');
 var MH=AV.Object.extend('MoveHouse');
 var TK=AV.Object.extend('Ticket');
+var WD=AV.Object.extend('Words');
 var transporter=nodemailer.createTransport(smtpTransport({
 	host: 'smtp.126.com',
     	port: 25,
@@ -200,6 +201,7 @@ app.post('/ticket',function(req,res){
 		});
 	}else{
 		console.log('Message is empty!');
+		res.render('ticket');
 	}
 });
 
@@ -239,7 +241,34 @@ app.get('/translate',function(req,res){
 });
 
 app.post('/translate',function(req,res){
-		
+		var name = req.body.name;
+	var phone=req.body.phone;
+	var weixin=req.body.weixin;
+	var studyStatus=req.body.study;
+	var license=req.body.license;
+	var haveCar=req.body.haveCar;
+	var fulltime=req.body.fulltime;
+	if(name && name.trim() !=''){
+		//Save visitor
+		var visitor = new Visitor();
+		visitor.set('name', name);
+		visitor.set('phone', phone);
+		visitor.set('weixin', weixin);
+		visitor.set('studyStatus', studyStatus);
+		visitor.set('license', license);
+		visitor.set('haveCar', haveCar);
+		visitor.set('fulltime', fulltime);
+		visitor.save(null, {
+			success: function(gameScore) {
+				renderSuccess(res,name,phone,weixin);
+			},
+			error: function(gameScore, error) {
+				res.render('500', 500);
+			}
+		});
+	}else{
+		res.redirect('/');
+	}	
 });
 
 
