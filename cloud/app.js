@@ -236,38 +236,53 @@ app.post('/',function(req, res){
 	}
 });
 
+function renderTranslate(res,result){
+	res.render('translate',{result:result});
+}
+
 app.get('/translate',function(req,res){
-	res.render('translate');	
+	var result=req.query.result;
+	if(!result)
+		result='';
+	renderTranslate(res,result);	
 });
 
 app.post('/translate',function(req,res){
-		var name = req.body.name;
-	var phone=req.body.phone;
-	var weixin=req.body.weixin;
-	var studyStatus=req.body.study;
-	var license=req.body.license;
-	var haveCar=req.body.haveCar;
-	var fulltime=req.body.fulltime;
-	if(name && name.trim() !=''){
-		//Save visitor
-		var visitor = new Visitor();
-		visitor.set('name', name);
-		visitor.set('phone', phone);
-		visitor.set('weixin', weixin);
-		visitor.set('studyStatus', studyStatus);
-		visitor.set('license', license);
-		visitor.set('haveCar', haveCar);
-		visitor.set('fulltime', fulltime);
-		visitor.save(null, {
+	var type = req.body.type;
+	var word=req.body.word;
+	var ftypr,ttype;
+	if(type=='cn'){
+		ftype='cn';
+		ttype='jp';
+	}else if(type='jp'){
+		ftype='jp';
+		ttype='cn';
+	}
+	translate({
+		    from: ftype,
+		    to: ttype,
+		    query: word
+		}, function(result) {
+		    console.log(result);
+		});
+	translate(word, function(result) {
+	    console.log(result); 
+	});
+	if(word && word.trim() !=''&&result&&result.trim()!=''){
+		var wd = new WD();
+		wd.set('type', type);
+		wd.set('word', word);
+		wd.set('result', result);
+		wd.save(null, {
 			success: function(gameScore) {
-				renderSuccess(res,name,phone,weixin);
+				res.redirect('/?result='+result);
 			},
 			error: function(gameScore, error) {
 				res.render('500', 500);
 			}
 		});
 	}else{
-		res.redirect('/');
+		res.render('translate')
 	}	
 });
 
