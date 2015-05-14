@@ -234,6 +234,14 @@ app.post('/',function(req, res){
 	}
 });
 
+app.get('/translate',function(req,res){
+	res.render('translate');	
+});
+
+app.post('/translate',function(req,res){
+		
+});
+
 
 
 // This line is required to make Express respond to http requests.
