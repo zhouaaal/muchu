@@ -236,21 +236,23 @@ app.post('/',function(req, res){
 	}
 });
 
-function renderTranslate(res,result){
-	res.render('translate',{result:result});
+function renderTranslate(res,result,word){
+	res.render('translate',{result:result,word:word});
 }
 
 app.get('/translate',function(req,res){
 	var result=req.query.result;
+	var word=req.query.word;
 	if(!result)
 		result='';
-	renderTranslate(res,result);	
+		word='';
+	renderTranslate(res,result,word);	
 });
 
 app.post('/translate',function(req,res){
 	var type = req.body.type;
 	var word=req.body.word;
-	var ftypr,ttype,resword;
+	var ftypr,ttype;
 	if(type=='cn'){
 		ftype='zh';
 		ttype='jp';
@@ -264,25 +266,25 @@ app.post('/translate',function(req,res){
 		    to: ttype,
 		    query: word
 		}, function(result) {
-			resword=result;
-		    console.log(result);
+			console.log(result);
+			var wd = new WD();
+			wd.set('type', type);
+			wd.set('word', word);
+			wd.set('result', result);
+			wd.save(null, {
+			success: function(gameScore) {
+				res.redirect('/translate?word='+word+'&result='+resword);
+			},
+			error: function(gameScore, error) {
+				res.render('500', 500);
+			}
+			});	
 		});
 	/*translate(word, function(result) {
 		resword=result;
 	    	console.log(result); 
 		});*/
-		var wd = new WD();
-		wd.set('type', type);
-		wd.set('word', word);
-		wd.set('result', resword);
-		wd.save(null, {
-			success: function(gameScore) {
-				res.redirect('/translate?result='+resword);
-			},
-			error: function(gameScore, error) {
-				res.render('500', 500);
-			}
-		});
+		
 	}else{
 		res.render('translate')
 	}	
