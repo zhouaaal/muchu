@@ -236,7 +236,7 @@ app.post('/',function(req, res){
 	}
 });
 
-function renderTranslate(res,result,word){
+function renderTranslate(res,result,word,type){
 	res.render('translate',{result:result,word:word,type:type});
 }
 
