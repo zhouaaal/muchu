@@ -258,7 +258,7 @@ app.post('/translate',function(req,res){
 		ftype='jp';
 		ttype='zh';
 	}
-	if(word && word.trim() !=''&&result&&result.trim()!=''){
+	if(word && word.trim() !=''){
 		translate({
 		    from: ftype,
 		    to: ttype,
