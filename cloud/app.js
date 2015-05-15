@@ -258,7 +258,8 @@ app.post('/translate',function(req,res){
 		ftype='jp';
 		ttype='cn';
 	}
-	translate({
+	if(word && word.trim() !=''&&result&&result.trim()!=''){
+		translate({
 		    from: ftype,
 		    to: ttype,
 		    query: word
@@ -267,8 +268,7 @@ app.post('/translate',function(req,res){
 		});
 	translate(word, function(result) {
 	    console.log(result); 
-	});
-	if(word && word.trim() !=''&&result&&result.trim()!=''){
+		});
 		var wd = new WD();
 		wd.set('type', type);
 		wd.set('word', word);
