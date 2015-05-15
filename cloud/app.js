@@ -237,17 +237,18 @@ app.post('/',function(req, res){
 });
 
 function renderTranslate(res,result,word){
-	res.render('translate',{result:result,word:word});
+	res.render('translate',{result:result,word:word,type});
 }
 
 app.get('/translate',function(req,res){
 	var result=req.query.result;
 	var word=req.query.word;
+	var type=req.query.type;
 	if(!result)
 		result='';
 	if(!word)
 		word='';
-	renderTranslate(res,result,word);	
+	renderTranslate(res,result,word,type);	
 });
 
 app.post('/translate',function(req,res){
