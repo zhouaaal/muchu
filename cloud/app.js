@@ -248,6 +248,8 @@ app.get('/translate',function(req,res){
 		result='';
 	if(!word)
 		word='';
+	if(!type)
+		type='zh'
 	renderTranslate(res,result,word,type);	
 });
 
