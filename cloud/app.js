@@ -250,13 +250,13 @@ app.get('/translate',function(req,res){
 app.post('/translate',function(req,res){
 	var type = req.body.type;
 	var word=req.body.word;
-	var ftypr,ttype;
+	var ftypr,ttype,resword;
 	if(type=='cn'){
-		ftype='cn';
+		ftype='zh';
 		ttype='jp';
 	}else if(type='jp'){
 		ftype='jp';
-		ttype='cn';
+		ttype='zh';
 	}
 	if(word && word.trim() !=''&&result&&result.trim()!=''){
 		translate({
@@ -267,15 +267,16 @@ app.post('/translate',function(req,res){
 		    console.log(result);
 		});
 	translate(word, function(result) {
-	    console.log(result); 
+		resword=result;
+	    	console.log(result); 
 		});
 		var wd = new WD();
 		wd.set('type', type);
 		wd.set('word', word);
-		wd.set('result', result);
+		wd.set('result', resword);
 		wd.save(null, {
 			success: function(gameScore) {
-				res.redirect('/translate?result='+result);
+				res.redirect('/translate?result='+resword);
 			},
 			error: function(gameScore, error) {
 				res.render('500', 500);
