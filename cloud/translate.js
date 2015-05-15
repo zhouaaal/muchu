@@ -11,7 +11,7 @@ module.exports = function(params, callback) {
 	
 	params = {
 		from: params.from || 'zh',
-		to: params.to || 'en',
+		to: params.to || 'jp',
 		query: params.query || ''
 	};
 	
