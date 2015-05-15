@@ -237,7 +237,7 @@ app.post('/',function(req, res){
 });
 
 function renderTranslate(res,result,word){
-	res.render('translate',{result:result,word:word,type});
+	res.render('translate',{result:result,word:word,type:type});
 }
 
 app.get('/translate',function(req,res){
