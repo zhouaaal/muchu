@@ -273,7 +273,7 @@ app.post('/translate',function(req,res){
 			wd.set('result', result);
 			wd.save(null, {
 			success: function(gameScore) {
-				res.redirect('/translate?word='+word+'&result='+result);
+				res.redirect('/translate?result='+result);
 			},
 			error: function(gameScore, error) {
 				res.render('500', 500);
@@ -281,7 +281,6 @@ app.post('/translate',function(req,res){
 			});	
 		});
 	/*translate(word, function(result) {
-		resword=result;
 	    	console.log(result); 
 		});*/
 		
