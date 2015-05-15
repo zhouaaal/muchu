@@ -264,12 +264,13 @@ app.post('/translate',function(req,res){
 		    to: ttype,
 		    query: word
 		}, function(result) {
+			resword=result;
 		    console.log(result);
 		});
-	translate(word, function(result) {
+	/*translate(word, function(result) {
 		resword=result;
 	    	console.log(result); 
-		});
+		});*/
 		var wd = new WD();
 		wd.set('type', type);
 		wd.set('word', word);
