@@ -36,10 +36,10 @@
     <hr>
     <form action="/translate" method="post" class="am-form">
       <label for="type">中->日</label>
-      <% if('zh'==%><%=type%><%=){%><input type="radio" name="type" id="type" value="zh" checked> <%}else{%>
+      <% if('zh'==%><%=type%><%){%><input type="radio" name="type" id="type" value="zh" checked> <%}else{%>
       <input type="radio" name="type" id="type" value="zh" ><%}%>
       <label for="type">日->中</label>
-      <% if('jp'==%><%=type%><%=){%><input type="radio" name="type" id="type" value="jp" checked> <%}else{%>
+      <% if('jp'==%><%=type%><%){%><input type="radio" name="type" id="type" value="jp" checked> <%}else{%>
       <input type="radio" name="type" id="type" value="jp" ><%}%>
       <br>
       <input type="name" name="word" id="word" value=<%=word%>>
