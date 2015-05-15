@@ -257,7 +257,7 @@ app.post('/translate',function(req,res){
 	var type = req.body.type;
 	var word=req.body.word;
 	var ftypr,ttype;
-	if(type=='cn'){
+	if(type=='zh'){
 		ftype='zh';
 		ttype='jp';
 	}else if(type='jp'){
