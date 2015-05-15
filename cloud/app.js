@@ -6,6 +6,7 @@ var avosExpressHttpsRedirect = require('avos-express-https-redirect');
 var nodemailer=require('nodemailer');
 var smtpTransport = require('nodemailer-smtp-transport');
 var translate = require('cloud/translate.js');
+var urlencode = require('urlencode');
 
 // App全局配置
 //设置模板目录
@@ -273,7 +274,7 @@ app.post('/translate',function(req,res){
 			wd.set('result', result);
 			wd.save(null, {
 			success: function(gameScore) {
-				res.redirect('/translate?result='+urldecode(result)+'&word='+urldecode(word));
+				res.redirect('/translate?result='+urlencode(result)+'&word='+urlencode(word));
 			},
 			error: function(gameScore, error) {
 				res.render('500', 500);
