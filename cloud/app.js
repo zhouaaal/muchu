@@ -245,6 +245,7 @@ app.get('/translate',function(req,res){
 	var word=req.query.word;
 	if(!result)
 		result='';
+	if(!word)
 		word='';
 	renderTranslate(res,result,word);	
 });
