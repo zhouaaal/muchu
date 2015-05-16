@@ -36,11 +36,11 @@
     <hr>
     <form action="/translate" method="post" class="am-form">
       <label for="lang">中->日</label>
-      <% if( %><%= lang %><%!="" ){ %>
-        <input lang="radio" name="lang" id="lang" value="zh" > <% }else{ %>
-        <input type="radio" name="lang" id="lang" value="zh" checked><% } %>
+      <% if(lang=='zh'){ %>
+        <input lang="radio" name="lang" id="lang" value="zh" checked> <% }else{ %>
+        <input type="radio" name="lang" id="lang" value="zh" ><% } %>
       <label for="lang">日->中</label>
-      <% if( %><%= lang %><%!="" ){ %>
+      <% if(lang=='jp'){ %>
         <input type="radio" name="lang" id="lang" value="jp" checked> <% }else{ %>
         <input type="radio" name="lang" id="lang" value="jp" ><% } %>
       <br>
