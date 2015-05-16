@@ -236,31 +236,31 @@ app.post('/',function(req, res){
 	}
 });
 
-function renderTranslate(res,result,word,type){
-	res.render('translate',{result:result,word:word,type:type});
+function renderTranslate(res,result,word,lang){
+	res.render('translate',{result:result,word:word,lang:lang});
 }
 
 app.get('/translate',function(req,res){
 	var result=req.query.result;
 	var word=req.query.word;
-	var type=req.query.type;
+	var lang=req.query.lang;
 	if(!result)
 		result='';
 	if(!word)
 		word='';
-	if(!type)
-		type='zh'
-	renderTranslate(res,result,word,type);	
+	if(!lang)
+		lang='zh'
+	renderTranslate(res,result,word,lang);	
 });
 
 app.post('/translate',function(req,res){
-	var type = req.body.type;
+	var lang = req.body.lang;
 	var word=req.body.word;
 	var ftypr,ttype;
-	if(type=='zh'){
+	if(lang=='zh'){
 		ftype='zh';
 		ttype='jp';
-	}else if(type='jp'){
+	}else if(lang='jp'){
 		ftype='jp';
 		ttype='zh';
 	}
@@ -272,12 +272,12 @@ app.post('/translate',function(req,res){
 		}, function(result) {
 			console.log(result);
 			var wd = new WD();
-			wd.set('type', type);
+			wd.set('type', lang);
 			wd.set('word', word);
 			wd.set('result', result);
 			wd.save(null, {
 			success: function(gameScore) {
-				res.redirect('/translate?result='+encodeURIComponent(result)+'&word='+encodeURIComponent(word)+'&type='+type);
+				res.redirect('/translate?result='+encodeURIComponent(result)+'&word='+encodeURIComponent(word)+'&lang='+lang);
 			},
 			error: function(gameScore, error) {
 				res.render('500', 500);
