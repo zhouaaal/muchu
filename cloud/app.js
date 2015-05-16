@@ -249,7 +249,7 @@ app.get('/translate',function(req,res){
 	if(!word)
 		word='';
 	if(!lang)
-		lang='zh'
+		lang='zh';
 	renderTranslate(res,result,word,lang);	
 });
 
