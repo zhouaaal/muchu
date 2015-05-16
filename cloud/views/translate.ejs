@@ -36,15 +36,17 @@
     <hr>
     <form action="/translate" method="post" class="am-form">
       <label for="lang">中->日</label>
-      <% if('zh'==%><%=lang%><%){%><input lang="radio" name="lang" id="lang" value="zh" checked> <%}else{%>
-      <input type="radio" name="lang" id="lang" value="zh" ><%}%>
+      <% if ('zh'== %><%= lang %><% ){ %>
+        <input lang="radio" name="lang" id="lang" value="zh" checked> <% }else{ %>
+        <input type="radio" name="lang" id="lang" value="zh" ><% } %>
       <label for="lang">日->中</label>
-      <% if('jp'==%><%=lang%><%){%><input type="radio" name="lang" id="lang" value="jp" checked> <%}else{%>
-      <input type="radio" name="lang" id="lang" value="jp" ><%}%>
+      <% if ('jp'== %><%=l ang %><% ){ %>
+        <input type="radio" name="lang" id="lang" value="jp" checked> <% }else{ %>
+        <input type="radio" name="lang" id="lang" value="jp" ><% } %>
       <br>
-      <input type="name" name="word" id="word" value=<%=word%>>
+      <input type="name" name="word" id="word" value=<%= word %>>
       <br>
-      <input type="name" name="result" id="result" value=<%=result%>>
+      <input type="name" name="result" id="result" value=<%= result %>>
       <br>
       <div class="am-cf">
         <input type="submit" name="" value="翻 译" class="am-btn am-btn-primary am-btn-sm am-fl am-width">
