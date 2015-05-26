@@ -101,14 +101,14 @@ function sendEmails(name,phone,address){
 					}); 
 }
 
-function sendTickets(name,phone,start,end,date,backdate,adults,child){
+function sendTickets(name,phone,start,end,date,backdate,adults,child,email){
 	var mailOptions={
 			from:'MUCHU<panyunyi@126.com>',
 			to:'liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
-			bcc: 'panyunyi@swlsg.com,hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
+			bcc: 'hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
 			subject:'チケットの予約です',
 			text:name,
-			html:'<b>日本旅游からのお知らせです</b><br><br><b>お客様から新規のお問合せが来ております</b><br><br>★☆★☆★☆★☆★☆★☆★☆★☆<br><br><b>姓名: </b>'+name+'<br><br><b>电话: </b>'+phone+'<br><br><b>出发地: </b>'+start+'<br><br><b>目的地: </b>'+
+			html:'<b>日本旅游からのお知らせです</b><br><br><b>お客様から新規のお問合せが来ております</b><br><br>★☆★☆★☆★☆★☆★☆★☆★☆<br><br><b>姓名: </b>'+name+'<br><br><b>电话: </b>'+phone+'<br><br><b>邮箱：</b>'+email+'<br><br><b>出发地: </b>'+start+'<br><br><b>目的地: </b>'+
 			end+'<br><br><b>出发日期: </b>'+date+'<br><br><b>返回日期: </b>'+backdate+'<br><br><b>成年人: </b>'+adults+'<br><br><b>未成年: </b>'+child+'<br><br>★☆★☆★☆★☆★☆★☆★☆★☆<br><img src="cid:00000001"/><br><br>問題等ございましたら、<br><br>下記連絡先までご連絡お願いいたします。<br><br><p>・～・～・～・～・株式会社SWL JAPAN ～・～・～・～・</p><br><br><p>　　　Muchu   メディア事業部</p><p>　　　　　張　琼　（　チョウ　ケイ　）</p><br><br><p>〒105-0004　東京都港区新橋6-5-3 山田屋ビル4F</p><p>TEL：03-6432-4540　Fax： 03-4578-0106</p><p>E-Mail: zhangqiong@swlsg.jp</p><br><p>・～・～・～・～・～・～・～・～・～・～・～・～・～・</p>',
 			attachments: [{
 			        filename: '01.png',
@@ -180,6 +180,7 @@ app.post('/ticket',function(req,res){
 	var adults=req.body.adults;
 	var child=req.body.child;
 	var backdate=req.body.backdate;
+	var email=req.body.email;
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
 		var tk=new TK();
 		tk.set('start',start);
@@ -190,9 +191,10 @@ app.post('/ticket',function(req,res){
 		tk.set('adults',adults);
 		tk.set('child',child);
 		tk.set('backdate',backdate);
+		tk.set('email',email);
 		tk.save(null,{
 			success:function(results){
-				sendTickets(name,phone,start,end,date,backdate,adults,child);
+				sendTickets(name,phone,start,end,date,backdate,adults,child,email);
 				res.render('ok');
 			},
 			error:function(results,err){
