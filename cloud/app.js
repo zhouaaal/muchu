@@ -105,7 +105,7 @@ function sendTickets(name,phone,start,end,date,backdate,adults,child,email){
 	var mailOptions={
 			from:'MUCHU<panyunyi@swlsg.com>',
 			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
-			//bcc: 'hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
+			bcc: 'hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
 			subject:'チケットの予約です',
 			text:name,
 			html:'<b>日本旅游からのお知らせです</b><br><br><b>お客様から新規のお問合せが来ております</b><br><br>★☆★☆★☆★☆★☆★☆★☆★☆<br><br><b>姓名: </b>'+name+'<br><br><b>电话: </b>'+phone+'<br><br><b>邮箱：</b>'+email+'<br><br><b>出发地: </b>'+start+'<br><br><b>目的地: </b>'+
