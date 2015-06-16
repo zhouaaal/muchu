@@ -27,11 +27,11 @@ var MH=AV.Object.extend('MoveHouse');
 var TK=AV.Object.extend('Ticket');
 var WD=AV.Object.extend('Words');
 var transporter=nodemailer.createTransport(smtpTransport({
-	host: 'smtp.126.com',
+	host: 'smtp.swlsg.com',
     	port: 25,
 	auth:{
-		user:'panyunyi@126.com',
-		pass:'pyylovezt924'
+		user:'panyunyi@swlsg.com',
+		pass:'swl888888'
 	}
 }));
 
@@ -51,14 +51,14 @@ function renderIndex(res, name){
 	});
 }
 
-function renderQuery(res,name,phone,weixin){
+function renderQuery(res,name,phone,weixin,email){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
 	query.limit(10000);
 	query.descending('createdAt');
 	query.find({
 		success: function(results){
-			res.render('query',{ name: name,phone:phone, weixin:weixin,visitors: results});
+			res.render('query',{ name: name,phone:phone, weixin:weixin, email:email,visitors: results});
 		},
 		error: function(error){
 			console.log(error);
@@ -67,14 +67,14 @@ function renderQuery(res,name,phone,weixin){
 	});
 }
 
-function renderSuccess(res,name,phone,weixin){
+function renderSuccess(res,name,phone,weixin,email){
 	var query = new AV.Query(Visitor);
 	query.skip(0);
 	query.limit(10000);
 	query.descending('createdAt');
 	query.find({
 		success: function(results){
-			res.render('success',{ name: name,phone:phone, weixin:weixin,visitors: results});
+			res.render('success',{ name: name,phone:phone, weixin:weixin,email:email,visitors: results});
 		},
 		error: function(error){
 			console.log(error);
@@ -85,7 +85,7 @@ function renderSuccess(res,name,phone,weixin){
 
 function sendEmails(name,phone,address){
 	var mailOptions={
-			from:'MUCHU<panyunyi@126.com>',
+			from:'MUCHU<panyunyi@swlsg.com>',
 			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
 			subject:'搬家信息',
 			text:name,
@@ -103,9 +103,9 @@ function sendEmails(name,phone,address){
 
 function sendTickets(name,phone,start,end,date,backdate,adults,child,email){
 	var mailOptions={
-			from:'MUCHU<panyunyi@126.com>',
-			to:'liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
-			bcc: 'hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
+			from:'MUCHU<panyunyi@swlsg.com>',
+			to:'panyunyi@swlsg.com,liuqianyu@swlsg.jp,zhangqiong@swlsg.jp',
+			//bcc: 'hanafujityo3985@yahoo.co.jp,his552d@his-world.com,info@abctravel.jp,ofc@sankeitourist.co.jp,505986270@qq.com,info@meishin-int.co.jp',
 			subject:'チケットの予約です',
 			text:name,
 			html:'<b>日本旅游からのお知らせです</b><br><br><b>お客様から新規のお問合せが来ております</b><br><br>★☆★☆★☆★☆★☆★☆★☆★☆<br><br><b>姓名: </b>'+name+'<br><br><b>电话: </b>'+phone+'<br><br><b>邮箱：</b>'+email+'<br><br><b>出发地: </b>'+start+'<br><br><b>目的地: </b>'+
@@ -130,7 +130,8 @@ app.get('/query',function(req,res){
 	var name=req.query.name;
 	var phone=req.query.phone;
 	var weixin=req.query.weixin;
-	renderQuery(res,name,phone,weixin);
+	var email=req.query.email;
+	renderQuery(res,name,phone,weixin,email);
 });
 
 app.get('/', function(req, res){
@@ -211,6 +212,7 @@ app.post('/',function(req, res){
 	var name = req.body.name;
 	var phone=req.body.phone;
 	var weixin=req.body.weixin;
+	var email=req.body.email;
 	var studyStatus=req.body.study;
 	var license=req.body.license;
 	var haveCar=req.body.haveCar;
@@ -221,13 +223,14 @@ app.post('/',function(req, res){
 		visitor.set('name', name);
 		visitor.set('phone', phone);
 		visitor.set('weixin', weixin);
+		visitor.set('email',email);
 		visitor.set('studyStatus', studyStatus);
 		visitor.set('license', license);
 		visitor.set('haveCar', haveCar);
 		visitor.set('fulltime', fulltime);
 		visitor.save(null, {
 			success: function(gameScore) {
-				renderSuccess(res,name,phone,weixin);
+				renderSuccess(res,name,phone,weixin,email);
 			},
 			error: function(gameScore, error) {
 				res.render('500', 500);
