@@ -134,34 +134,6 @@ app.get('/query',function(req,res){
 	renderQuery(res,name,phone,weixin,email);
 });
 
-app.get('/output',function(req,res){
-	var filename='output.xls';
-	res.set({
-				  'Content-Type': 'application/vnd.ms-execl',
-				  'Content-Disposition':  "attachment;filename="+encodeURIComponent(fileName) ,
-				  'Pragma':'no-cache',
-				  'Expires': 0
-			});
-	var content='';
-	visitors.forEach(function (visitor){
-		content+=visitor.get('name')+'\t';
-		content+=visitor.get('phone')+'\t';
-		content+=visitor.get('weixin')+'\t';
-		content+=visitor.get('email')+'\t';
-		content+=visitor.get('studyStatus')+'\t';
-		content+=visitor.get('license')+'\t';
-		content+=visitor.get('haveCar')+'\t';
-		content+=visitor.get('fulltime')+'\t';
-		content+=visitor.get('createdAt')+'\t';
-		content+='\t\n';
-	}
-	var buffer = new Buffer(content);
-	//需要转换字符集
-	var iconv = require('iconv-lite');
-	var str=iconv.encode(buffer,'gb2312'); 
-	res.send(str);
-});
-
 app.get('/', function(req, res){
 	var name = req.query.name;
 	if(!name)
