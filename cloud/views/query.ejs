@@ -11,26 +11,6 @@
 <title>在日华人信息</title>
 <link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
 <link href="stylesheets/iscroll.css" rel="stylesheet" type="text/css" />
-<!--script src="stylesheets/jquery-1.11.0.min.js"></script-->
-<!--幻灯片代码-->
-<script type="text/javascript" src="stylesheets/iscroll.js"></script>
-<script type="text/javascript">
-var myScroll;
-function loaded() {
-	myScroll = new iScroll('wrapper', {
-		snap: true,
-		momentum: false,
-		hScrollbar: false,
-		onScrollEnd: function () {
-			document.querySelector('#indicator > li.active').className = '';
-			document.querySelector('#indicator > li:nth-child(' + (this.currPageX+1) + ')').className = 'active';
-		}
-	});
-}
-
-document.addEventListener('DOMContentLoaded', loaded, false);
-</script>
-
 
 </head>
 <body class="allbg">
@@ -47,10 +27,12 @@ document.addEventListener('DOMContentLoaded', loaded, false);
 		  <p>姓名：&nbsp <%= visitor.get('name') %> </p>
 		  <p>手机：&nbsp <%= visitor.get('phone') %> </p>
 		  <p>微信：&nbsp <%= visitor.get('weixin') %> </p>
+		  <p>邮箱：&nbsp <%= visitro.get('email') %> </p>
 		  <p>留学资格：&nbsp <%= visitor.get('studyStatus') %> </p>
 		  <p>驾驶证：&nbsp <%= visitor.get('license') %> </p>
 		  <p>有无汽车：&nbsp <%= visitor.get('haveCar') %> </p>
 		  <p>应聘职位：&nbsp <%= visitor.get('fulltime') %> </p>
+		  <p>应聘时间：&nbsp <%= visitor.get('createdAt')%> </p>
 		</li>
 		<% })
 		   } %>
@@ -68,30 +50,6 @@ document.addEventListener('DOMContentLoaded', loaded, false);
 
 	</div>
 </div>
-
-<script type="text/javascript" src="stylesheets/jquery.min.js"></script>
-<script type="text/javascript">
-var count = document.getElementById("thelist").getElementsByTagName("img").length;	
-
-var count2 = document.getElementsByClassName("menuimg").length;
-
-for(i=0;i<count;i++){
- document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
-}
-
-document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
-
-setInterval(function(){
-	myScroll.scrollToPage('next', 0,400,count);
-},3500 );
-
-window.onresize = function(){ 
-	for(i=0;i<count;i++){
-		document.getElementById("thelist").getElementsByTagName("img").item(i).style.cssText = " width:"+document.body.clientWidth+"px";
-	}
- document.getElementById("scroller").style.cssText = " width:"+document.body.clientWidth*count+"px";
-}
-</script>
 
 </body>
 </html>
