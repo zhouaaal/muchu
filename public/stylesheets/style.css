@@ -12,10 +12,7 @@ img{max-width:100%;}
 .clearfix:after{visibility: hidden;display: block;font-size: 0;content: " ";clear: both;height: 0;zoom:1;}
 .l{float:left;}.r{float:right;}
 /*reset样式重置*/
-.allbg{background:url(http://www.luru123.com/store/images/backgrnd.jpg) left repeat-y #ebebeb;-moz-background-size:100% 220px;
-    -webkit-background-size:100% 220px;
-    -o-background-size:100% 220px;
-    background-size:100% 220px;}
+.allbg{}
 .mainbg { position:fixed; top:0; left:0; width:100%; height:100%; z-index:-99; }
 .mainbg img { width:100%; height:100%; }
 /* banner */
@@ -176,7 +173,7 @@ outline: none;}
 }
 /*注册页面*/
 .registpage{float:left;position: relative; z-index:999; width:100%}
-.infobox{ float:left;position: relative; z-index:999;margin-left:2.5%; margin-top:-0.5%; width:95%; background-color:#f3f3f3;
+.infobox{ float:left;position: relative; z-index:999;margin-left:2.5%; margin-top:-0.5%; width:95%;
  border-radius:5px;
  -moz-border-radius:5px;
  -webkit-border-radius:5px;}
