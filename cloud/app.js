@@ -217,6 +217,8 @@ app.post('/',function(req, res){
 	var license=req.body.license;
 	var haveCar=req.body.haveCar;
 	var fulltime=req.body.fulltime;
+	var age=req.body.age;
+	var area=req.body.area;
 	if(name && name.trim() !=''){
 		//Save visitor
 		var visitor = new Visitor();
@@ -228,6 +230,8 @@ app.post('/',function(req, res){
 		visitor.set('license', license);
 		visitor.set('haveCar', haveCar);
 		visitor.set('fulltime', fulltime);
+		visitor.set('age',age);
+		visitor.set('area',area);
 		visitor.save(null, {
 			success: function(gameScore) {
 				renderSuccess(res,name,phone,weixin,email);
