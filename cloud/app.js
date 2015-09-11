@@ -311,10 +311,11 @@ app.get('/zhongqiu2015',function(req,res){
 app.post('/zhongqiu2015',function(req,res){
 	var name=req.body.name;
 	var phone=req.body.phone;
-		var zhongqiu=new zhongqiu();
-		zhongqiu.set('name', name);
-		zhongqiu.set('phone', phone);
-		zhongqiu.save(null,{
+	var zhongqiu = new AV.Query(zhongqiu);
+		var zhq=new zhongqiu();
+		zhq.set('name', name);
+		zhq.set('phone', phone);
+		zhq.save(null,{
 			success:function(results){
 				renderSuccess(res,name,phone);
 			},
