@@ -314,7 +314,6 @@ app.post('/zhongqiu2015',function(req,res){
 		var zhq=new zhongqiu();
 		zhq.set('name', name);
 		zhq.set('phone', phone);
-		res.render('500',500);
 		zhq.save(null,{
 			success:function(results){
 				renderSuccess(res,name,phone);
