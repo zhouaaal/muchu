@@ -317,8 +317,7 @@ app.post('/zhongqiu2015',function(req,res){
 		ZHQ.set('phone',phone);
 		ZHQ.save(null,{
 			success:function(results){
-				sendTickets(name,phone);
-				res.render('ok');
+				renderSuccess(res,name,phone);
 			},
 			error:function(results,err){
 				console.log(err);
@@ -329,6 +328,22 @@ app.post('/zhongqiu2015',function(req,res){
 		res.render('zhongqiu2015');
 	}
 });
+function renderSuccess(res,name,phone){
+	var query = new AV.Query(Visitor);
+	query.skip(0);
+	query.limit(10000);
+	query.descending('createdAt');
+	query.find({
+		success: function(results){
+			res.render('success2',{ name: name,phone:phone,visitors: results});
+		},
+		error: function(error){
+			console.log(error);
+			res.render('500',500)
+		}
+	});
+}
+
 
 // This line is required to make Express respond to http requests.
 app.listen();
