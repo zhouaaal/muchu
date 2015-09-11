@@ -20,6 +20,13 @@
 	<div class="toptitle">
     	<div class="shopclass">《第一回上海風情音楽晚餐会》报名表</div>
     </div>
+      <% if (visitors){ %>
+		<%  visitors.forEach(function (visitor){ %>
+		<li>
+		  全部&nbsp <%= visitor.get('name') %>：<%= visitor.get('phone') %> ,
+		</li>
+		<% })
+		   } %>
     <ul class="shoplist">
 		<% if (visitors){ %>
 		<%  visitors.forEach(function (visitor){ %>
@@ -30,6 +37,13 @@
 		<% })
 		   } %>
 	  </ul>
+	  <% if (visitors){ %>
+		<%  visitors.forEach(function (visitor){ %>
+		<li>
+		  全部&nbsp <%= visitor.get('name') %>：<%= visitor.get('phone') %> ,
+		</li>
+		<% })
+		   } %>
     <div class="shop-page">
     	<span class="pages"><a href="#">首页</a></span>
         <span class="pages"><a href="#">上一页</a></span>
