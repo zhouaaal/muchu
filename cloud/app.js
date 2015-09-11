@@ -356,7 +356,7 @@ function renderQuery(res,name,phone){
 	query.descending('createdAt');
 	query.find({
 		success: function(results){
-			res.render('query',{ name: name,phone:phone,visitors: results});
+			res.render('zhongqiu2015all',{ name: name,phone:phone,visitors: results});
 		},
 		error: function(error){
 			console.log(error);
