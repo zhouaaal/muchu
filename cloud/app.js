@@ -25,7 +25,7 @@ app.get('/hello', function(req, res) {
 var Visitor = AV.Object.extend('Visitor');
 var MH=AV.Object.extend('MoveHouse');
 var TK=AV.Object.extend('Ticket');
-var ZHQ=AV.Object.extend('zhongqiu2015');
+var zhongqiu=AV.Object.extend('zhongqiu');
 var WD=AV.Object.extend('Words');
 var transporter=nodemailer.createTransport(smtpTransport({
 	host: 'smtp.swlsg.com',
@@ -311,10 +311,10 @@ app.get('/zhongqiu2015',function(req,res){
 app.post('/zhongqiu2015',function(req,res){
 	var name=req.body.name;
 	var phone=req.body.phone;
-		var ZHQ=new ZHQ();
-		ZHQ.set('name', name);
-		ZHQ.set('phone', phone);
-		ZHQ.save(null,{
+		var zhongqiu=new zhongqiu();
+		zhongqiu.set('name', name);
+		zhongqiu.set('phone', phone);
+		zhongqiu.save(null,{
 			success:function(results){
 				renderSuccess(res,name,phone);
 			},
