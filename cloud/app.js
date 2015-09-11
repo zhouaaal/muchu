@@ -311,6 +311,7 @@ app.get('/zhongqiu2015',function(req,res){
 app.post('/zhongqiu2015',function(req,res){
 	var name=req.body.name;
 	var phone=req.body.phone;
+	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
 		var zhq=new zhongqiu();
 		zhq.set('name', name);
 		zhq.set('phone', phone);
@@ -322,6 +323,9 @@ app.post('/zhongqiu2015',function(req,res){
 				console.log(err);
 			}
 		});
+	}else{
+		console.log('Message is empty!');
+	}
 });
 function renderSuccess(res,name,phone){
 	var query = new AV.Query(zhongqiu);
