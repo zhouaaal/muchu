@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width = device-width, initial-scale = 1.0, minimum-scale = 1.0, maximum-scale = 1.0, user-scalable = no"/>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<meta name="format-detection" content="telephone=no">
+<meta name="keywords" content="暮秋微商家" /> 
+<meta name="description" content="暮秋微商" />
+<title>在日华人信息</title>
+<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
+<link href="stylesheets/iscroll.css" rel="stylesheet" type="text/css" />
+
+</head>
+<body class="allbg">
+<script type="text/javascript" src="stylesheets/jquery.min.js"></script>
+
+<div class="detail-list">
+	<div class="toptitle">
+    	<div class="shopclass">《第一回上海風情音楽晚餐会》报名表</div>
+    </div>
+    <ul class="shoplist">
+		<% if (visitors){ %>
+		<%  visitors.forEach(function (visitor){ %>
+		<li>
+		  <p>姓名：&nbsp <%= visitor.get('name') %> </p>
+		  <p>手机：&nbsp <%= visitor.get('phone') %> </p>
+		</li>
+		<% })
+		   } %>
+	  </ul>
+    <div class="shop-page">
+    	<span class="pages"><a href="#">首页</a></span>
+        <span class="pages"><a href="#">上一页</a></span>
+        <span class="pages"><a href="#">下一页</a></span>
+        <span class="pages"><a href="#">尾页</a></span>
+    </div>
+</div>
+
+<div class="copyright">CopyRight 2015  创思维力，All rights reserved.</div>
+<div class="copyright"></div>
+
+	</div>
+</div>
+
+</body>
+</html>
