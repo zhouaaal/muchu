@@ -311,10 +311,8 @@ app.get('/zhongqiu2015',function(req,res){
 app.post('/zhongqiu2015',function(req,res){
 	var name=req.body.name;
 	var phone=req.body.phone;
-	
-	var zhongqiu = new AV.Query(zhongqiu);
-	res.render('500',500);
 		var zhq=new zhongqiu();
+		res.render('500',500);
 		zhq.set('name', name);
 		zhq.set('phone', phone);
 		zhq.save(null,{
