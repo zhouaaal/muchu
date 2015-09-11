@@ -327,6 +327,7 @@ app.post('/zhongqiu2015',function(req,res){
 		console.log('Message is empty!');
 	}
 });
+
 function renderSuccess(res,name,phone){
 	var query = new AV.Query(zhongqiu);
 	query.skip(0);
@@ -343,6 +344,26 @@ function renderSuccess(res,name,phone){
 	});
 }
 
+app.get('/query',function(req,res){
+	var name=req.query.name;
+	var phone=req.query.phone;
+	renderQuery(res,name,phone);
+});
+function renderQuery(res,name,phone){
+	var query = new AV.Query(zhongqiu);
+	query.skip(0);
+	query.limit(10000);
+	query.descending('createdAt');
+	query.find({
+		success: function(results){
+			res.render('query',{ name: name,phone:phone,visitors: results});
+		},
+		error: function(error){
+			console.log(error);
+			res.render('500',500)
+		}
+	});
+}
 
 // This line is required to make Express respond to http requests.
 app.listen();
