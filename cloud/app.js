@@ -25,6 +25,7 @@ app.get('/hello', function(req, res) {
 var Visitor = AV.Object.extend('Visitor');
 var MH=AV.Object.extend('MoveHouse');
 var TK=AV.Object.extend('Ticket');
+var ZHQ=AV.Object.extend('Zhongqiu2015');
 var WD=AV.Object.extend('Words');
 var transporter=nodemailer.createTransport(smtpTransport({
 	host: 'smtp.swlsg.com',
@@ -311,10 +312,10 @@ app.post('/zhongqiu2015',function(req,res){
 	var name=req.body.name;
 	var phone=req.body.phone;
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
-		var tk=new TK();
-		tk.set('name',name);
-		tk.set('phone',phone);
-		tk.save(null,{
+		var ZHQ=new ZHQ();
+		ZHQ.set('name',name);
+		ZHQ.set('phone',phone);
+		ZHQ.save(null,{
 			success:function(results){
 				sendTickets(name,phone);
 				res.render('ok');
@@ -325,7 +326,7 @@ app.post('/zhongqiu2015',function(req,res){
 		});
 	}else{
 		console.log('Message is empty!');
-		res.render('ticket');
+		res.render('zhongqiu2015');
 	}
 });
 
