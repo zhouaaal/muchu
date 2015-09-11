@@ -311,6 +311,7 @@ app.get('/zhongqiu2015',function(req,res){
 app.post('/zhongqiu2015',function(req,res){
 	var name=req.body.name;
 	var phone=req.body.phone;
+	res.render('500',500);
 	var zhongqiu = new AV.Query(zhongqiu);
 		var zhq=new zhongqiu();
 		zhq.set('name', name);
@@ -325,7 +326,7 @@ app.post('/zhongqiu2015',function(req,res){
 		});
 });
 function renderSuccess(res,name,phone){
-	var query = new AV.Query(Visitor);
+	var query = new AV.Query(zhongqiu);
 	query.skip(0);
 	query.limit(10000);
 	query.descending('createdAt');
@@ -335,7 +336,7 @@ function renderSuccess(res,name,phone){
 		},
 		error: function(error){
 			console.log(error);
-			res.render('500',500)
+			res.render('500',500);
 		}
 	});
 }
