@@ -311,8 +311,9 @@ app.get('/zhongqiu2015',function(req,res){
 app.post('/zhongqiu2015',function(req,res){
 	var name=req.body.name;
 	var phone=req.body.phone;
+	
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
-		console.log('err');
+		res.render('500',500);
 		var ZHQ=new ZHQ();
 		ZHQ.set('name', name);
 		ZHQ.set('phone', phone);
