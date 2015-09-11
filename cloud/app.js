@@ -25,7 +25,7 @@ app.get('/hello', function(req, res) {
 var Visitor = AV.Object.extend('Visitor');
 var MH=AV.Object.extend('MoveHouse');
 var TK=AV.Object.extend('Ticket');
-var ZHQ=AV.Object.extend('Zhongqiu2015');
+var ZHQ=AV.Object.extend('zhongqiu2015');
 var WD=AV.Object.extend('Words');
 var transporter=nodemailer.createTransport(smtpTransport({
 	host: 'smtp.swlsg.com',
