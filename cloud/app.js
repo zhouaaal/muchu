@@ -303,6 +303,31 @@ app.post('/translate',function(req,res){
 });
 
 
+app.get('/zhongqiu2015',function(req,res){
+	res.render('zhongqiu2015');
+});
+
+app.post('/zhongqiu2015',function(req,res){
+	var name=req.body.name;
+	var phone=req.body.phone;
+	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
+		var tk=new TK();
+		tk.set('name',name);
+		tk.set('phone',phone);
+		tk.save(null,{
+			success:function(results){
+				sendTickets(name,phone);
+				res.render('ok');
+			},
+			error:function(results,err){
+				console.log(err);
+			}
+		});
+	}else{
+		console.log('Message is empty!');
+		res.render('ticket');
+	}
+});
 
 // This line is required to make Express respond to http requests.
 app.listen();
