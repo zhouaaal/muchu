@@ -313,8 +313,8 @@ app.post('/zhongqiu2015',function(req,res){
 	var phone=req.body.phone;
 	
 	if(name&&name.trim()!=''&&phone&&phone.trim()!=''){
-		res.render('500',500);
 		var ZHQ=new ZHQ();
+		res.render('500',500);
 		ZHQ.set('name', name);
 		ZHQ.set('phone', phone);
 		ZHQ.save(null,{
