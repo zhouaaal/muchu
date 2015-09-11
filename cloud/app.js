@@ -344,7 +344,7 @@ function renderSuccess(res,name,phone){
 	});
 }
 
-app.get('/query',function(req,res){
+app.get('/zhongqiu2015all',function(req,res){
 	var name=req.query.name;
 	var phone=req.query.phone;
 	renderQuery(res,name,phone);
