@@ -900,11 +900,13 @@ color: rgb(255, 0, 0);"></span>👏</span></p>
 </form>
 </div>
 
-<div id="marqueebox1" style="width:150px; height:25px;line-height:25px; border:#bbb 1px solid;overflow:hidden;"> 
+ <br>
+<div id="marqueebox1" style="width:150px; height:25px;line-height:25px; border:#bbb 1px solid;overflow:hidden;">
+<p><span>已报名嘉宾：</span></p>
 <ul style="margin:0; padding:0">           
 <% if (visitors){ %>
 <%  visitors.forEach(function (visitor){ %>
-<li style="height:25px; line-height:25px; font-size:12px; text-align:center; list-style-type:none;">
+<li style="height:25px;width:670px; line-height:25px; font-size:12px; text-align:center; list-style-type:none;">
 <%= visitor.get('name') %>
 </li>
 <% })
