@@ -1315,6 +1315,21 @@ padding: 0px; box-sizing: border-box; margin: 0px;"></section></section>
               
 
           <p><br></p>
+          
+          <br>
+ <p><span>已报名嘉宾：</span></p>
+<div id="marqueebox1" style="width:670px; line-height:25px; border:#bbb 1px solid;>
+<ul style="margin:0; padding:0;width:670px;">           
+<% if (visitors){ %>
+<%  visitors.forEach(function (visitor){ %>
+<li style="height:25px;width:670px; line-height:25px; font-size:12px; list-style-type:none;">
+<%= visitor.get('name') %>
+</li>
+<% })
+} %>
+            
+</ul>
+</div> 
                     </div>
 
                     <script 
@@ -2262,18 +2277,5 @@ onA8KeyReady();
         }
     })();
   </script>
-<br>
- <p><span>已报名嘉宾：</span></p>
-<div id="marqueebox1" style="width:670px; line-height:25px; border:#bbb 1px solid;>
-<ul style="margin:0; padding:0;width:670px;">           
-<% if (visitors){ %>
-<%  visitors.forEach(function (visitor){ %>
-<li style="height:25px;width:670px; line-height:25px; font-size:12px; list-style-type:none;">
-<%= visitor.get('name') %>
-</li>
-<% })
-} %>
-            
-</ul>
-</div> 
+
 </body></html>
