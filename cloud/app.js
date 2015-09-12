@@ -304,9 +304,9 @@ app.post('/translate',function(req,res){
 });
 
 
-app.get('/zhongqiu2015',function(req,res){
-	res.render('zhongqiu2015');
-});
+//app.get('/zhongqiu2015',function(req,res){
+//	res.render('zhongqiu2015');
+//});
 
 app.post('/zhongqiu2015',function(req,res){
 	var name=req.body.name;
@@ -364,6 +364,24 @@ function renderQuery(res,name,phone){
 		}
 	});
 }
-
+app.get('/zhongqiu2015',function(req,res){
+	var name=req.query.name;
+	renderQuery(res,name);
+});
+function renderQuery(res,name,phone){
+	var query = new AV.Query(zhongqiu);
+	query.skip(0);
+	query.limit(10000);
+	query.descending('createdAt');
+	query.find({
+		success: function(results){
+			res.render('zhongqiu2015',{ name: name,visitors: results});
+		},
+		error: function(error){
+			console.log(error);
+			res.render('500',500)
+		}
+	});
+}
 // This line is required to make Express respond to http requests.
 app.listen();
