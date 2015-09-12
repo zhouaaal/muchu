@@ -368,7 +368,7 @@ app.get('/zhongqiu2015',function(req,res){
 	var name=req.query.name;
 	renderQuery(res,name);
 });
-function renderQuery(res,name,phone){
+function renderQuery(res,name){
 	var query = new AV.Query(zhongqiu);
 	query.skip(0);
 	query.limit(10000);
