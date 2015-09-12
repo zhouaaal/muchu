@@ -347,9 +347,9 @@ function renderSuccess(res,name,phone){
 app.get('/zhongqiu2015all',function(req,res){
 	var name=req.query.name;
 	var phone=req.query.phone;
-	renderQuery(res,name,phone);
+	renderQuery3(res,name,phone);
 });
-function renderQuery(res,name,phone){
+function renderQuery3(res,name,phone){
 	var query = new AV.Query(zhongqiu);
 	query.skip(0);
 	query.limit(10000);
@@ -366,9 +366,9 @@ function renderQuery(res,name,phone){
 }
 app.get('/zhongqiu2015',function(req,res){
 	var name=req.query.name;
-	renderQuery(res,name);
+	renderQuery2(res,name);
 });
-function renderQuery(res,name){
+function renderQuery2(res,name){
 	var query = new AV.Query(zhongqiu);
 	query.skip(0);
 	query.limit(10000);
